@@ -1,4 +1,5 @@
 import { useState, FormEvent } from 'react';
+import { Mail, Phone, MapPin } from 'lucide-react'; // Importing necessary icons
 import emailjs from 'emailjs-com';  // Importing EmailJS service
 
 const Contact = () => {
@@ -183,8 +184,9 @@ const Contact = () => {
                   <button
                     type="submit"
                     className="btn btn-secondary w-full"
+                    disabled={isLoading} // Disable button while loading
                   >
-                    Send Message
+                    {isLoading ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               </div>
