@@ -18,7 +18,7 @@ const Services = () => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Comprehensive digital solutions to help your business grow and succeed
+            Comprehensive digital solutions to help your sector grow and succeed
           </p>
         </div>
       </section>
