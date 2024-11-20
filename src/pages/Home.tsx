@@ -96,7 +96,7 @@ const Home = () => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Let's transform your business together with our innovative IT solutions
+            Let's transform your sector with our innovative IT solutions
           </p>
           <Link 
             to="/contact"
