@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import emailjs from 'emailjs-com';  // Importing EmailJS service
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,14 +10,38 @@ const Contact = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false); // State for form submission status
+  const [isLoading, setIsLoading] = useState(false); // Loading state for form submission
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // In a real application, you would handle the form submission here
-    console.log('Form submitted:', formData);
+    setIsLoading(true); // Set loading state when submitting
 
-    // Set isSubmitted to true after form submission
-    setIsSubmitted(true);
+    // Prepare the data object to be sent
+    const data = {
+      to_name: 'Groww Digitally Team',  // You can replace this with your recipient's name
+      from_name: formData.name,
+      message: formData.message,
+    };
+
+    // Send the email via EmailJS
+    emailjs
+      .send(
+        'service_xt66o39', // Your Service ID
+        'template_5rsscrl', // Your Template ID
+        data, // Data to send (form fields)
+        'TC7GBas9O4jpNcloh' // Your Public Key
+      )
+      .then(
+        (response) => {
+          console.log('Email sent successfully:', response);
+          setIsSubmitted(true); // Set submitted state after successful send
+          setIsLoading(false);  // Reset loading state
+        },
+        (error) => {
+          console.error('Error sending email:', error);
+          setIsLoading(false);  // Reset loading state on error
+        }
+      );
   };
 
   return (
@@ -58,39 +82,7 @@ const Contact = () => {
                 data-aos="fade-right"
               >
                 <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Phone</h3>
-                    <p className="text-gray-600">+91 91586 69195</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Email</h3>
-                    <p className="text-gray-600">meltauro03@gmail.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Address</h3>
-                    <p className="text-gray-600">
-                      Sainath Nagar, Bhoisar West<br />
-                      Maharashtra, India
-                    </p>
-                  </div>
-                </div>
+                {/* Add your contact information here */}
               </div>
 
               {/* Contact Form */}
@@ -157,33 +149,14 @@ const Contact = () => {
                   <button
                     type="submit"
                     className="btn btn-secondary w-full"
+                    disabled={isLoading} // Disable button when loading
                   >
-                    Send Message
+                    {isLoading ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               </div>
             </div>
           )}
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="section bg-white">
-        <div className="container">
-          <div 
-            className="rounded-lg overflow-hidden shadow-lg"
-            data-aos="fade-up"
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237.66983940849258!2d72.75904647783314!3d19.80440914413838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71eff326b9a9f%3A0xa34084e9684069eb!2sC3%2FC4%2C%20Sainath%20Nagar%2C%20Bhoisar%20West%2C%20Boisar%2C%20Maharashtra%20401504!5e1!3m2!1sen!2sin!4v1732026226739!5m2!1sen!2sin"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
         </div>
       </section>
     </div>
