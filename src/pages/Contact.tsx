@@ -9,10 +9,15 @@ const Contact = () => {
     message: '',
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false); // State for form submission status
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // In a real application, you would handle the form submission here
     console.log('Form submitted:', formData);
+
+    // Set isSubmitted to true after form submission
+    setIsSubmitted(true);
   };
 
   return (
@@ -39,118 +44,126 @@ const Contact = () => {
       {/* Contact Form & Info */}
       <section className="section bg-light">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <div 
-              className="space-y-8"
-              data-aos="fade-right"
-            >
-              <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
-              
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0">
-                  <Phone className="h-6 w-6" />
+          {isSubmitted ? (
+            <div className="text-center p-6 bg-green-100 rounded-lg shadow-md">
+              <h2 className="text-3xl font-bold text-green-800">
+                Thank you for submitting! We'll get back to you shortly.
+              </h2>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 gap-12">
+              {/* Contact Information */}
+              <div 
+                className="space-y-8"
+                data-aos="fade-right"
+              >
+                <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Phone</h3>
+                    <p className="text-gray-600">+91 91586 69195</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Phone</h3>
-                  <p className="text-gray-600">+91 91586 69195</p>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Email</h3>
+                    <p className="text-gray-600">meltauro03@gmail.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Address</h3>
+                    <p className="text-gray-600">
+                      Sainath Nagar, Bhoisar West<br />
+                      Maharashtra, India
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0">
-                  <Mail className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Email</h3>
-                  <p className="text-gray-600">meltauro03@gmail.com</p>
-                </div>
-              </div>
+              {/* Contact Form */}
+              <div 
+                className="card"
+                data-aos="fade-left"
+              >
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                      Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    />
+                  </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0">
-                  <MapPin className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Address</h3>
-                  <p className="text-gray-600">
-                    Sainath Nagar, Bhoisar West<br />
-                    Maharashtra, India
-                  </p>
-                </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                      Phone (optional)
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                      Message *
+                    </label>
+                    <textarea
+                      id="message"
+                      required
+                      rows={4}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="btn btn-secondary w-full"
+                  >
+                    Send Message
+                  </button>
+                </form>
               </div>
             </div>
-
-            {/* Contact Form */}
-            <div 
-              className="card"
-              data-aos="fade-left"
-            >
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                    Phone (optional)
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="btn btn-secondary w-full"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
+          )}
         </div>
       </section>
 
