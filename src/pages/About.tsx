@@ -85,22 +85,22 @@ const About = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: 'Alex Thompson',
-                role: 'CEO & Founder',
+                name: 'Melvin Tauro',
+                role: 'Managing Director',
                 image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80',
-                description: 'With over 15 years of experience in digital transformation'
+                description: 'Leads the organization with a vision to innovate and excel.'
               },
               {
-                name: 'Sarah Chen',
+                name: 'Xavier',
                 role: 'Technical Director',
                 image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80',
-                description: 'Expert in software architecture and development'
+                description: 'Expert in technology solutions and software architecture.'
               },
               {
-                name: 'Michael Roberts',
+                name: 'Bhairav',
                 role: 'Creative Director',
                 image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80',
-                description: 'Passionate about creating impactful digital experiences'
+                description: 'Passionate about creating memorable and impactful experiences.'
               }
             ].map((member, index) => (
               <div 
