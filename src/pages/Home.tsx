@@ -19,7 +19,7 @@ const Home = () => {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              Empowering businesses through innovative IT solutions and digital transformation
+              Empowering different sectors through innovative IT solutions and digital transformation
             </p>
             <Link 
               to="/contact"
