@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import emailjs from 'emailjs-com';  // Importing EmailJS service
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,14 +10,40 @@ const Contact = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false); // State for form submission status
+  const [isLoading, setIsLoading] = useState(false); // Loading state for form submission
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // In a real application, you would handle the form submission here
-    console.log('Form submitted:', formData);
+    setIsLoading(true); // Set loading state when submitting
 
-    // Set isSubmitted to true after form submission
-    setIsSubmitted(true);
+    // Prepare the data object to be sent
+    const data = {
+      to_name: 'Groww Digitally Team',  // You can replace this with your recipient's name
+      from_name: formData.name,
+      from_email: formData.email,  // Including email in the data
+      from_phone: formData.phone,  // Including phone number in the data
+      message: formData.message,
+    };
+
+    // Send the email via EmailJS
+    emailjs
+      .send(
+        'service_xt66o39', // Your Service ID
+        'template_5rsscrl', // Your Template ID
+        data, // Data to send (form fields)
+        'TC7GBas9O4jpNcloh' // Your Public Key
+      )
+      .then(
+        (response) => {
+          console.log('Email sent successfully:', response);
+          setIsSubmitted(true); // Set submitted state after successful send
+          setIsLoading(false);  // Reset loading state
+        },
+        (error) => {
+          console.error('Error sending email:', error);
+          setIsLoading(false);  // Reset loading state on error
+        }
+      );
   };
 
   return (
