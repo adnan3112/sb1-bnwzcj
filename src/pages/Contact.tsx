@@ -20,6 +20,8 @@ const Contact = () => {
     const data = {
       to_name: 'Groww Digitally Team',  // You can replace this with your recipient's name
       from_name: formData.name,
+      from_email: formData.email,  // Including email in the data
+      from_phone: formData.phone,  // Including phone number in the data
       message: formData.message,
     };
 
@@ -76,15 +78,6 @@ const Contact = () => {
             </div>
           ) : (
             <div className="grid md:grid-cols-2 gap-12">
-              {/* Contact Information */}
-              <div 
-                className="space-y-8"
-                data-aos="fade-right"
-              >
-                <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
-                {/* Add your contact information here */}
-              </div>
-
               {/* Contact Form */}
               <div 
                 className="card"
