@@ -16,8 +16,9 @@
 }
 
 @layer components {
+  /* Buttons */
   .btn {
-    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    @apply px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-300;
   }
 
   .btn-primary {
@@ -28,15 +29,23 @@
     @apply bg-secondary text-white hover:bg-secondary/90;
   }
 
+  /* Container */
   .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-full sm:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* Sections */
   .section {
-    @apply py-16 sm:py-24;
+    @apply py-12 sm:py-16 md:py-24;
   }
 
+  /* Cards */
   .card {
-    @apply bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300;
+    @apply bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+
+  /* Responsive Grid */
+  .grid-responsive {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
   }
 }

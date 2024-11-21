@@ -35,7 +35,7 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Contact Info</h3>
             <ul className="space-y-2 text-sm">
               <li>+91 91586 69195</li>
-              <li>melvinworkspace6@gmail.com</li>
+              <li>info@growwdigitally.com</li>
               <li>Sainath Nagar, Boisar West</li>
               <li>Maharashtra, India</li>
             </ul>
