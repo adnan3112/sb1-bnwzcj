@@ -87,19 +87,19 @@ const About = () => {
               {
                 name: 'Melvin',
                 role: 'Managing Director',
-                image: '/images/melvin.png', // Local image path
+                image: 'sb1-bnwzcj/src/images/bhairav.png', // Local image path
                 description: 'Leads the organization with a vision to innovate and excel.'
               },
               {
                 name: 'Xavier',
                 role: 'Technical Director',
-                image: '/images/xavier.png', // Local image path
+                image: 'https://avatar.iran.liara.run/public/13', // Local image path
                 description: 'Expert in technology solutions and software architecture.'
               },
               {
                 name: 'Bhairav',
                 role: 'Creative Director',
-                image: '/images/bhairav.png', // Local image path
+                image: 'sb1-bnwzcj/src/images/bhairav.png', // Local image path
                 description: 'Passionate about creating memorable and impactful experiences.'
               }
             ].map((member, index) => (

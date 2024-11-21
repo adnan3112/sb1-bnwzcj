@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sprout } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <Sprout className="h-8 w-8" />
+            <img 
+              src="/src/images/logo.png" 
+              alt="Logo" 
+              className="h-8 w-8" 
+            />
             <span className="font-bold text-xl">Groww Digitally</span>
           </Link>
 
