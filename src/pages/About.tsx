@@ -11,7 +11,7 @@ const About = () => {
           </h1>
           <p className="text-xl max-w-3xl mx-auto text-center" data-aos="fade-up" data-aos-delay="100">
             A leading IT solutions company providing services like Custom Software Development, 
-            ERP Solutions, and Website Design. We empower businesses by delivering innovative IT solutions.
+            ERP Solutions, and Website Design.
           </p>
         </div>
       </section>
@@ -28,7 +28,7 @@ const About = () => {
                 <h2 className="text-2xl font-bold ml-4">Our Mission</h2>
               </div>
               <p className="text-gray-600">
-                Empower businesses through innovative IT solutions that drive growth, 
+                Empower sectors through innovative IT solutions that drive growth, 
                 efficiency, and digital transformation. We strive to be the catalyst 
                 that propels organizations into the digital future.
               </p>
@@ -42,8 +42,7 @@ const About = () => {
                 <h2 className="text-2xl font-bold ml-4">Our Vision</h2>
               </div>
               <p className="text-gray-600">
-                Help businesses unlock new opportunities and create meaningful customer 
-                experiences through cutting-edge technology solutions and digital innovation.
+                Help different sectors unlock new opportunities and create meaningful experiences for people through cutting-edge technology solutions and digital innovation.
               </p>
             </div>
           </div>
