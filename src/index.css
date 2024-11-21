@@ -11,12 +11,12 @@
   }
 
   body {
-    @apply bg-light text-dark;
+    @apply bg-light text-[#36B7C3]; /* Set primary text color */
     line-height: 1.6;
   }
 
   a {
-    @apply text-primary hover:text-primary/90;
+    @apply text-[#36B7C3] hover:text-[#36B7C3]/90; /* Set link color */
     transition: color 0.3s ease-in-out;
   }
 }
@@ -62,28 +62,29 @@
 
   /* Typography */
   .title {
-    @apply text-3xl md:text-4xl font-semibold text-center;
+    @apply text-3xl md:text-4xl font-semibold text-center text-[#36B7C3]; /* Set title text color */
   }
 
   .subheading {
     @apply text-xl text-gray-600 text-center max-w-3xl mx-auto;
   }
 
+  /* Section Title */
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-[#36B7C3] text-center mb-6; /* Set section title color */
+  }
+
   /* Input Fields */
   .input-field {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition duration-200;
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#36B7C3] focus:border-transparent transition duration-200;
   }
   
   .input-field:focus {
     @apply outline-none;
   }
-
-  /* Section Title */
-  .section-title {
-    @apply text-2xl md:text-3xl font-bold text-primary text-center mb-6;
-  }
 }
 
+/* Mobile-first approach */
 @layer utilities {
   /* Custom Utilities */
   .scroll-smooth {
@@ -92,6 +93,35 @@
 
   /* Hover/Focus Effects */
   .focus-ring-primary {
-    @apply focus:ring-2 focus:ring-primary/50;
+    @apply focus:ring-2 focus:ring-[#36B7C3]/50;
+  }
+
+  /* Adjustments for smaller screens */
+  @media (max-width: 640px) {
+    .btn {
+      @apply px-4 py-2; /* Make buttons more compact on small screens */
+    }
+
+    .grid-responsive {
+      @apply grid-cols-1; /* Stack grid items on small screens */
+    }
+
+    .section-title {
+      @apply text-xl; /* Make section titles smaller on small screens */
+    }
+
+    .container {
+      @apply px-4; /* Remove padding on smaller screens */
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .container {
+      @apply px-6; /* Reduce padding on medium screens */
+    }
+
+    .card {
+      @apply p-4; /* Adjust padding for medium screens */
+    }
   }
 }
