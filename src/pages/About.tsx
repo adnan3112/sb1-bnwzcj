@@ -87,7 +87,7 @@ const About = () => {
               {
                 name: 'Melvin',
                 role: 'Managing Director',
-                image: 'https://imgur.com/fvbubxt',
+                image: 'https://i.imgur.com/fvbubxt.jpg',
                 description: 'Leads the organization with a vision to innovate and excel.'
               },
               {
@@ -99,7 +99,7 @@ const About = () => {
               {
                 name: 'Bhairav',
                 role: 'Creative Director',
-                image: 'https://imgur.com/JmaKZP9',
+                image: 'https://i.imgur.com/JmaKZP9.jpg',
                 description: 'Passionate about creating memorable and impactful experiences.'
               }
             ].map((member, index) => (
