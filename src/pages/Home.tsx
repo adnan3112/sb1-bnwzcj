@@ -1,9 +1,23 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Code, Rocket, Target, Users } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   return (
     <div>
+      {/* SEO Tags */}
+      <Helmet>
+      <meta charSet="UTF-8" />
+        <meta 
+          name="description" 
+          content="Groww Digitally: Planting Seeds for Your Digital Future. Empowering different sectors through innovative IT solutions and digital transformation, from software development to digital marketing." 
+        />
+        <meta name="keywords" content="IT solutions, digital transformation, software development, digital marketing, Groww Digitally" />
+        <meta name="author" content="Groww Digitally" />
+        <title>Groww Digitally - Empowering Your Digital Future</title>
+        <link rel="canonical" href="https://your-website.com" />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="bg-primary text-white py-20">
         <div className="container mx-auto px-4">
