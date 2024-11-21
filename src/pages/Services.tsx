@@ -5,16 +5,16 @@ const Services = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-primary text-white py-20">
+      <section className="bg-primary text-white py-20 sm:py-32">
         <div className="container text-center">
           <h1 
-            className="text-4xl md:text-5xl font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
             data-aos="fade-up"
           >
             Our Services
           </h1>
           <p 
-            className="text-xl max-w-2xl mx-auto"
+            className="text-lg sm:text-xl max-w-2xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="100"
           >
@@ -26,20 +26,20 @@ const Services = () => {
       {/* Services Grid */}
       <section className="section bg-light">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <Link
                   key={service.id}
                   to={`/services/${service.id}`}
-                  className="card group hover:bg-primary hover:text-white transition-all duration-300"
+                  className="card group hover:bg-primary hover:text-white transition-all duration-300 p-6"
                   data-aos="fade-up"
                   data-aos-delay={index * 100}
                 >
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center">
-                      <Icon className="h-6 w-6" />
+                    <div className="w-16 h-16 rounded-full bg-secondary text-white flex items-center justify-center">
+                      <Icon className="h-8 w-8" />
                     </div>
                     <h3 className="text-xl font-semibold ml-4">{service.title}</h3>
                   </div>

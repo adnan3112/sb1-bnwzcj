@@ -5,17 +5,17 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-primary text-white py-20">
+      <section className="bg-primary text-white py-20 sm:py-32">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 
-              className="text-4xl md:text-6xl font-bold mb-6"
+              className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6"
               data-aos="fade-up"
             >
               Planting Seeds for Your Digital Future
             </h1>
             <p 
-              className="text-xl mb-8"
+              className="text-lg sm:text-xl mb-8"
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -23,7 +23,7 @@ const Home = () => {
             </p>
             <Link 
               to="/contact"
-              className="btn btn-secondary inline-flex items-center"
+              className="btn btn-secondary inline-flex items-center px-6 py-3"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -37,12 +37,12 @@ const Home = () => {
       <section className="section bg-light">
         <div className="container">
           <h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-12"
+            className="text-3xl sm:text-4xl font-bold text-center mb-12"
             data-aos="fade-up"
           >
             Our Core Values
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {[
               {
                 icon: <Code className="h-8 w-8" />,
@@ -86,13 +86,13 @@ const Home = () => {
       <section className="section bg-secondary text-white">
         <div className="container text-center">
           <h2 
-            className="text-3xl md:text-4xl font-bold mb-6"
+            className="text-3xl sm:text-4xl font-bold mb-6"
             data-aos="fade-up"
           >
             Ready to Grow Digitally?
           </h2>
           <p 
-            className="text-xl mb-8 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="100"
           >
@@ -100,7 +100,7 @@ const Home = () => {
           </p>
           <Link 
             to="/contact"
-            className="btn bg-white text-secondary hover:bg-gray-100 inline-flex items-center"
+            className="btn bg-white text-secondary hover:bg-gray-100 inline-flex items-center px-6 py-3"
             data-aos="fade-up"
             data-aos-delay="200"
           >

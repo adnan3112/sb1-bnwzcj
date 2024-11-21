@@ -20,7 +20,7 @@ const About = () => {
       <section className="section bg-light">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="card" data-aos="fade-right">
+            <div className="card p-6" data-aos="fade-right">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center">
                   <Target className="h-6 w-6" />
@@ -34,7 +34,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="card" data-aos="fade-left">
+            <div className="card p-6" data-aos="fade-left">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center">
                   <Lightbulb className="h-6 w-6" />
@@ -83,12 +83,13 @@ const About = () => {
                 description: 'Passionate about creating memorable and impactful experiences.'
               }
             ].map((member, index) => (
-              <div key={member.name} className="card text-center group" data-aos="fade-up" data-aos-delay={index * 100}>
+              <div key={member.name} className="card text-center group shadow-lg p-6" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="mb-6 relative mx-auto w-32 h-32 rounded-full overflow-hidden">
                   <img 
                     src={member.image} 
                     alt={member.name}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    onError={(e: any) => e.target.src = 'https://via.placeholder.com/150'} // Fallback image
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{member.name}</h3>

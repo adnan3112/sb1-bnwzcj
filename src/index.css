@@ -12,21 +12,27 @@
 
   body {
     @apply bg-light text-dark;
+    line-height: 1.6;
+  }
+
+  a {
+    @apply text-primary hover:text-primary/90;
+    transition: color 0.3s ease-in-out;
   }
 }
 
 @layer components {
   /* Buttons */
   .btn {
-    @apply px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-300;
+    @apply px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-300 ease-in-out;
   }
 
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary/90;
+    @apply bg-primary text-white hover:bg-primary/90 focus:ring-2 focus:ring-primary/50;
   }
 
   .btn-secondary {
-    @apply bg-secondary text-white hover:bg-secondary/90;
+    @apply bg-secondary text-white hover:bg-secondary/90 focus:ring-2 focus:ring-secondary/50;
   }
 
   /* Container */
@@ -41,11 +47,51 @@
 
   /* Cards */
   .card {
-    @apply bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300;
+    @apply bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:scale-105;
   }
 
   /* Responsive Grid */
   .grid-responsive {
     @apply grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+  }
+
+  /* Flexbox for alignment */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  /* Typography */
+  .title {
+    @apply text-3xl md:text-4xl font-semibold text-center;
+  }
+
+  .subheading {
+    @apply text-xl text-gray-600 text-center max-w-3xl mx-auto;
+  }
+
+  /* Input Fields */
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition duration-200;
+  }
+  
+  .input-field:focus {
+    @apply outline-none;
+  }
+
+  /* Section Title */
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-primary text-center mb-6;
+  }
+}
+
+@layer utilities {
+  /* Custom Utilities */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Hover/Focus Effects */
+  .focus-ring-primary {
+    @apply focus:ring-2 focus:ring-primary/50;
   }
 }

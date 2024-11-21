@@ -12,6 +12,7 @@ const Contact = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false); // State for form submission status
   const [isLoading, setIsLoading] = useState(false); // Loading state for form submission
+  const [error, setError] = useState<string | null>(null); // Error state for form submission
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -19,30 +20,32 @@ const Contact = () => {
 
     // Prepare the data object to be sent
     const data = {
-      to_name: 'Groww Digitally Team',  // You can replace this with your recipient's name
+      to_name: 'Groww Digitally Team',
       from_name: formData.name,
-      from_email: formData.email,  // Including email in the data
-      from_phone: formData.phone,  // Including phone number in the data
+      from_email: formData.email, 
+      from_phone: formData.phone,  
       message: formData.message,
     };
 
     // Send the email via EmailJS
     emailjs
       .send(
-        'service_xt66o39', // Your Service ID
-        'template_5rsscrl', // Your Template ID
-        data, // Data to send (form fields)
-        'TC7GBas9O4jpNcloh' // Your Public Key
+        'service_xt66o39', 
+        'template_5rsscrl', 
+        data, 
+        'TC7GBas9O4jpNcloh' 
       )
       .then(
         (response) => {
           console.log('Email sent successfully:', response);
-          setIsSubmitted(true); // Set submitted state after successful send
-          setIsLoading(false);  // Reset loading state
+          setIsSubmitted(true);
+          setIsLoading(false);
+          setFormData({ name: '', email: '', phone: '', message: '' }); // Reset form
         },
         (error) => {
           console.error('Error sending email:', error);
-          setIsLoading(false);  // Reset loading state on error
+          setIsLoading(false);
+          setError('There was an error sending your message. Please try again.');
         }
       );
   };
@@ -125,6 +128,7 @@ const Contact = () => {
                 className="card"
                 data-aos="fade-left"
               >
+                {error && <div className="text-red-600 text-center">{error}</div>}
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">

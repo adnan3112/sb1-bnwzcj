@@ -21,9 +21,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo Section */}
           <Link to="/" className="flex items-center space-x-4">
-            <img 
-              src="https://imgur.com/zvoXvgM.png" 
-              alt="Logo" 
+            <img
+              src="https://imgur.com/zvoXvgM.png"
+              alt="Logo"
               className="h-20 w-20" // Increased logo size
             />
             <span className="font-bold text-3xl">Groww Digitally</span> {/* Larger text size */}
@@ -61,7 +61,7 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`block py-2 hover:text-accent transition-colors ${
+                className={`block py-2 px-4 hover:text-accent transition-colors ${
                   isActive(link.path) ? 'text-accent' : ''
                 }`}
                 onClick={() => setIsOpen(false)}
