@@ -87,7 +87,7 @@ const About = () => {
               {
                 name: 'Melvin',
                 role: 'Managing Director',
-                image: 'sb1-bnwzcj/src/images/bhairav.png', // Local image path
+                image: 'sb1-bnwzcj/src/assets/images/melvin.png', // Local image path
                 description: 'Leads the organization with a vision to innovate and excel.'
               },
               {
@@ -99,7 +99,7 @@ const About = () => {
               {
                 name: 'Bhairav',
                 role: 'Creative Director',
-                image: 'sb1-bnwzcj/src/images/bhairav.png', // Local image path
+                image: 'sb1-bnwzcj/src/assets/images/bhairav.png', // Local image path
                 description: 'Passionate about creating memorable and impactful experiences.'
               }
             ].map((member, index) => (
