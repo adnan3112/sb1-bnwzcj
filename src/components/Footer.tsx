@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin, Sprout } from 'lucide-react';
+import { FaFacebook, FaInstagram, FaLinkedin, FaTimes as FaX } from 'react-icons/fa';  // Using react-icons
 
 const Footer = () => {
   return (
@@ -8,7 +8,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
-              <Sprout className="h-8 w-8" />
+              {/* Updated logo image from Imgur */}
+              <img 
+                src="https://i.imgur.com/zvoXvgM.png" 
+                alt="Logo" 
+                className="h-8 w-8" 
+              />
               <span className="font-bold text-xl">Groww Digitally</span>
             </Link>
             <p className="text-sm text-gray-300">
@@ -40,16 +45,16 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-accent transition-colors">
-                <Facebook className="h-6 w-6" />
+                <FaFacebook className="h-6 w-6" /> {/* Updated Facebook Icon */}
               </a>
               <a href="#" className="hover:text-accent transition-colors">
-                <Twitter className="h-6 w-6" />
+                <FaX className="h-6 w-6" /> {/* Updated X icon for Twitter */}
               </a>
               <a href="#" className="hover:text-accent transition-colors">
-                <Instagram className="h-6 w-6" />
+                <FaInstagram className="h-6 w-6" />
               </a>
               <a href="#" className="hover:text-accent transition-colors">
-                <Linkedin className="h-6 w-6" />
+                <FaLinkedin className="h-6 w-6" />
               </a>
             </div>
           </div>
