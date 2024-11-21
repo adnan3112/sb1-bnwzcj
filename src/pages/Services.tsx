@@ -1,23 +1,9 @@
 import { Link } from 'react-router-dom';
 import { services } from '../data/services';
-import { Helmet } from 'react-helmet';
 
 const Services = () => {
   return (
     <div>
-      {/* SEO Tags */}
-      <Helmet>
-      <meta charSet="UTF-8" />
-        <meta 
-          name="description" 
-          content="Explore our comprehensive range of digital solutions, from software development to IT consulting, designed to help your business grow and succeed in the digital age." 
-        />
-        <meta name="keywords" content="digital solutions, IT consulting, software development, business growth, tech services" />
-        <meta name="author" content="Groww Digitally" />
-        <title>Our Services - Groww Digitally</title>
-        <link rel="canonical" href="https://growwdigitally.com/services" />
-      </Helmet>
-
       {/* Hero Section */}
       <section className="bg-primary text-white py-20">
         <div className="container text-center">
