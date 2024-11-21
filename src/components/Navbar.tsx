@@ -24,7 +24,7 @@ const Navbar = () => {
             <img 
               src="https://imgur.com/zvoXvgM.png" 
               alt="Logo" 
-              className="h-16 w-16"  // Increased size of the logo
+              className="h-12 w-12"  // Increased size of the logo
             />
             <span className="font-bold text-xl">Groww Digitally</span>
           </Link>

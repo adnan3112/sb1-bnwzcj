@@ -12,7 +12,7 @@ const Footer = () => {
               <img 
                 src="https://i.imgur.com/zvoXvgM.png" 
                 alt="Logo" 
-                className="h-8 w-8" 
+                className="h-16 w-16" 
               />
               <span className="font-bold text-xl">Groww Digitally</span>
             </Link>
