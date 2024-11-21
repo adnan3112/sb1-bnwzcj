@@ -13,20 +13,20 @@ const Navbar = () => {
     { name: 'Contact', path: '/contact' },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path) => location.pathname === path;
 
   return (
     <nav className="bg-primary text-white">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            {/* Updated logo image with Imgur URL and larger size */}
+        <div className="flex justify-between items-center h-20">
+          {/* Logo Section */}
+          <Link to="/" className="flex items-center space-x-4">
             <img 
               src="https://imgur.com/zvoXvgM.png" 
               alt="Logo" 
-              className="h-12 w-12"  // Increased size of the logo
+              className="h-16 w-16" // Increased logo size
             />
-            <span className="font-bold text-xl">Groww Digitally</span>
+            <span className="font-bold text-3xl">Groww Digitally</span> {/* Larger text size */}
           </Link>
 
           {/* Desktop Navigation */}
