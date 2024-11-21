@@ -16,38 +16,42 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission & Vision */}
       <section className="section bg-light">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="card p-6" data-aos="fade-right">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center">
-                  <Target className="h-6 w-6" />
-                </div>
-                <h2 className="text-2xl font-bold ml-4">Our Mission</h2>
-              </div>
-              <p className="text-gray-600">
-                Empower sectors through innovative IT solutions that drive growth, 
-                efficiency, and digital transformation. We strive to be the catalyst 
-                that propels organizations into the digital future.
-              </p>
-            </div>
-
-            <div className="card p-6" data-aos="fade-left">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center">
-                  <Lightbulb className="h-6 w-6" />
-                </div>
-                <h2 className="text-2xl font-bold ml-4">Our Vision</h2>
-              </div>
-              <p className="text-gray-600">
-                Help different sectors unlock new opportunities and create meaningful experiences for people through cutting-edge technology solutions and digital innovation.
-              </p>
-            </div>
+  <div className="container">
+    <div className="grid md:grid-cols-2 gap-12">
+      {/* Mission */}
+      <div className="card p-6" data-aos="fade-right">
+        <div className="flex items-center mb-6">
+          <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center">
+            <Target className="h-6 w-6" />
           </div>
+          <h2 className="text-2xl font-bold ml-4">Our Mission</h2>
         </div>
-      </section>
+        <p className="text-gray-600">
+          To revolutionize sectors with cutting-edge digital solutions that enhance efficiency, 
+          inspire innovation, and create a lasting impact. We are committed to empowering organizations 
+          to thrive in a rapidly evolving world by delivering technology that truly transforms lives.
+        </p>
+      </div>
+
+      {/* Vision */}
+      <div className="card p-6" data-aos="fade-left">
+        <div className="flex items-center mb-6">
+          <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center">
+            <Lightbulb className="h-6 w-6" />
+          </div>
+          <h2 className="text-2xl font-bold ml-4">Our Vision</h2>
+        </div>
+        <p className="text-gray-600">
+          To be the global leader in driving digital transformation across diverse sectors, 
+          enabling people and organizations to unlock their full potential. Through collaboration, 
+          innovation, and excellence, we envision a world where technology fosters growth, sustainability, 
+          and better futures for everyone.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Team Section */}
       <section className="section bg-white">
