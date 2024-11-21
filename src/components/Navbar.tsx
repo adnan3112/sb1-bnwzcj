@@ -20,8 +20,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
+            {/* Updated logo image with Imgur URL */}
             <img 
-              src="sb1-bnwzcj/src/assets/images/logo.png" 
+              src="https://i.imgur.com/LKoyJ1O.png" 
               alt="Logo" 
               className="h-8 w-8" 
             />
