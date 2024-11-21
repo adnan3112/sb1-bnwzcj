@@ -15,7 +15,7 @@ const Services = () => {
         <meta name="keywords" content="digital solutions, IT consulting, software development, business growth, tech services" />
         <meta name="author" content="Groww Digitally" />
         <title>Our Services - Groww Digitally</title>
-        <link rel="canonical" href="https://your-website.com/services" />
+        <link rel="canonical" href="https://growwdigitally.com/services" />
       </Helmet>
 
       {/* Hero Section */}
