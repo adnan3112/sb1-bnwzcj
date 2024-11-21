@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaInstagram, FaLinkedin, FaTimes as FaX } from 'react-icons/fa';  // Using react-icons
+import { FaFacebook, FaInstagram, FaLinkedin} from 'react-icons/fa';  // Using react-icons
 
 const Footer = () => {
   return (
@@ -46,9 +46,6 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a href="#" className="hover:text-accent transition-colors">
                 <FaFacebook className="h-6 w-6" /> {/* Updated Facebook Icon */}
-              </a>
-              <a href="#" className="hover:text-accent transition-colors">
-                <FaX className="h-6 w-6" /> {/* Updated X icon for Twitter */}
               </a>
               <a href="#" className="hover:text-accent transition-colors">
                 <FaInstagram className="h-6 w-6" />
