@@ -4,7 +4,7 @@ import { services } from '../data/services';
 
 const ServiceDetail = () => {
   const { id } = useParams();
-  const service = services.find(s => s.id === id);
+  const service = services.find((s) => s.id === id);
 
   if (!service) {
     return (
@@ -26,7 +26,7 @@ const ServiceDetail = () => {
       {/* Hero Section */}
       <section className="bg-primary text-white py-20">
         <div className="container">
-          <Link 
+          <Link
             to="/services"
             className="inline-flex items-center text-accent hover:text-white mb-8"
           >
@@ -34,20 +34,20 @@ const ServiceDetail = () => {
             Back to Services
           </Link>
           <div className="flex items-center mb-8">
-            <div 
+            <div
               className="w-16 h-16 rounded-full bg-secondary text-white flex items-center justify-center"
               data-aos="fade-right"
             >
               <Icon className="h-8 w-8" />
             </div>
-            <h1 
+            <h1
               className="text-4xl md:text-5xl font-bold ml-6"
               data-aos="fade-left"
             >
               {service.title}
             </h1>
           </div>
-          <p 
+          <p
             className="text-xl max-w-3xl"
             data-aos="fade-up"
             data-aos-delay="100"
@@ -60,7 +60,7 @@ const ServiceDetail = () => {
       {/* Features Section */}
       <section className="section bg-light">
         <div className="container">
-          <h2 
+          <h2
             className="text-3xl font-bold mb-12 text-center"
             data-aos="fade-up"
           >
@@ -68,7 +68,7 @@ const ServiceDetail = () => {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {service.features.map((feature, index) => (
-              <div 
+              <div
                 key={index}
                 className="card"
                 data-aos="fade-up"
@@ -87,20 +87,17 @@ const ServiceDetail = () => {
       {/* CTA Section */}
       <section className="section bg-secondary text-white">
         <div className="container text-center">
-          <h2 
-            className="text-3xl font-bold mb-6"
-            data-aos="fade-up"
-          >
+          <h2 className="text-3xl font-bold mb-6" data-aos="fade-up">
             Ready to Get Started?
           </h2>
-          <p 
+          <p
             className="text-xl mb-8 max-w-2xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Contact us today to learn more about our {service.title.toLowerCase()} services
+            Contact us today to learn more about our {service.title.toLowerCase()} services.
           </p>
-          <Link 
+          <Link
             to="/contact"
             className="btn bg-white text-secondary hover:bg-gray-100"
             data-aos="fade-up"

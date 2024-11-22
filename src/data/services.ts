@@ -9,7 +9,13 @@ import {
   Palette, 
   FileText, 
   MapPin, 
-  DollarSign 
+  DollarSign, 
+  Users, 
+  Monitor, 
+  Smartphone, 
+  Link2, 
+  Server, 
+  Briefcase 
 } from 'lucide-react';
 
 export const services = [
@@ -28,143 +34,185 @@ export const services = [
     ]
   },
   {
-    id: 'website-development',
-    icon: Globe,
-    title: 'Website Development',
-    shortDescription: 'Professional websites that drive results',
-    fullDescription: 'From simple landing pages to complex e-commerce platforms, we design and develop websites that look great and perform even better. Our focus is on creating user-friendly, responsive websites that help achieve your business goals.',
+    id: 'consultation-services',
+    icon: Users,
+    title: 'Consultation Services',
+    shortDescription: 'Expert advice to take your business forward',
+    fullDescription: 'Our consultation services offer strategic insights and practical solutions to help your business navigate challenges and achieve success.',
     features: [
-      'Responsive design',
-      'SEO optimization',
-      'Performance optimization',
-      'Content management systems',
-      'E-commerce solutions'
+      'Business strategy consultation',
+      'Technology planning',
+      'Process optimization',
+      'Risk analysis',
+      'Customized action plans'
     ]
   },
   {
-    id: 'blogging',
+    id: 'lead-generation',
+    icon: Megaphone,
+    title: 'Lead Generation',
+    shortDescription: 'Capture and nurture potential customers',
+    fullDescription: 'We implement proven strategies to attract and convert leads, ensuring a steady flow of potential customers for your business.',
+    features: [
+      'Targeted lead campaigns',
+      'Email and social media strategies',
+      'Lead scoring and nurturing',
+      'Analytics and reporting',
+      'CRM integration'
+    ]
+  },
+  {
+    id: 'ui-ux-design',
     icon: PenTool,
-    title: 'Blogging Services',
-    shortDescription: 'Engaging content that connects with your audience',
-    fullDescription: 'Our blogging services help you establish authority in your industry and connect with your target audience. We create well-researched, engaging content that drives traffic and conversions.',
+    title: 'UI/UX Design',
+    shortDescription: 'Exceptional designs for exceptional user experiences',
+    fullDescription: 'We craft intuitive, engaging user interfaces and experiences that captivate your audience and enhance usability.',
     features: [
-      'Content strategy',
-      'SEO-optimized writing',
-      'Regular posting schedule',
-      'Topic research',
-      'Analytics and reporting'
+      'User research and personas',
+      'Wireframing and prototyping',
+      'Responsive design',
+      'Usability testing',
+      'Interaction design'
     ]
   },
   {
-    id: 'erp-solutions',
-    icon: Database,
-    title: 'ERP Solutions',
-    shortDescription: 'Streamline your business operations',
-    fullDescription: 'Our ERP solutions help you integrate and manage all aspects of your business operations in one place. We provide customized ERP systems that improve efficiency and decision-making.',
+    id: 'ecommerce-development',
+    icon: Globe,
+    title: 'Ecommerce Website Development',
+    shortDescription: 'Scalable solutions for online businesses',
+    fullDescription: 'We design and develop powerful e-commerce platforms that offer seamless shopping experiences and drive sales.',
     features: [
-      'Business process analysis',
-      'Custom ERP development',
-      'System integration',
-      'Training and support',
+      'Custom e-commerce platforms',
+      'Payment gateway integration',
+      'Inventory management',
+      'Mobile-friendly design',
+      'SEO optimization'
+    ]
+  },
+  {
+    id: 'mobile-app-development',
+    icon: Smartphone,
+    title: 'Mobile App Development',
+    shortDescription: 'Apps that empower your business on-the-go',
+    fullDescription: 'Our mobile app development services deliver high-performance, feature-rich applications for Android and iOS.',
+    features: [
+      'Custom app design',
+      'Native and cross-platform apps',
+      'API integrations',
+      'Performance optimization',
+      'App store deployment'
+    ]
+  },
+  {
+    id: 'content-marketing',
+    icon: FileText,
+    title: 'Content Marketing',
+    shortDescription: 'Content that resonates with your audience',
+    fullDescription: 'Our content marketing services focus on creating valuable content that attracts, engages, and converts customers.',
+    features: [
+      'Content strategy development',
+      'Blog and article creation',
+      'Video marketing',
+      'Infographics and visuals',
+      'Performance analysis'
+    ]
+  },
+  {
+    id: 'digital-pr-social-media',
+    icon: Briefcase,
+    title: 'Digital PR & Social Media',
+    shortDescription: 'Boost your online reputation and engagement',
+    fullDescription: 'We help businesses amplify their online presence through targeted digital PR campaigns and social media strategies.',
+    features: [
+      'Online reputation management',
+      'Influencer outreach',
+      'Social media strategy',
+      'Content creation and curation',
       'Performance monitoring'
     ]
   },
   {
-    id: 'seo',
+    id: 'social-media-management',
     icon: Search,
-    title: 'SEO',
-    shortDescription: 'Improve your online visibility',
-    fullDescription: 'Our SEO services help improve your website\'s visibility in search engine results. We use proven strategies to increase organic traffic and improve your online presence.',
+    title: 'Social Media Management',
+    shortDescription: 'Engage your audience effectively',
+    fullDescription: 'We manage your social media profiles to ensure consistent, high-quality engagement with your audience.',
     features: [
-      'Keyword research',
-      'On-page optimization',
-      'Technical SEO',
-      'Content strategy',
-      'Performance tracking'
+      'Social media strategy',
+      'Content scheduling',
+      'Community engagement',
+      'Ad campaign management',
+      'Performance analytics'
     ]
   },
   {
-    id: 'digital-marketing',
-    icon: Megaphone,
-    title: 'Digital Marketing',
-    shortDescription: 'Reach and engage your target audience',
-    fullDescription: 'We create comprehensive digital marketing strategies that help you reach and engage your target audience across multiple channels.',
+    id: 'link-building-services',
+    icon: Link2,
+    title: 'Link Building Services',
+    shortDescription: 'Strengthen your online presence',
+    fullDescription: 'Our link-building strategies improve your website’s domain authority and search engine ranking.',
     features: [
-      'Social media marketing',
-      'Email marketing',
-      'PPC advertising',
-      'Content marketing',
-      'Analytics and reporting'
+      'High-quality backlinks',
+      'Guest posting',
+      'Competitor analysis',
+      'Content promotion',
+      'SEO performance tracking'
     ]
   },
   {
-    id: 'data-analytics',
-    icon: BarChart,
-    title: 'Data Analytics',
-    shortDescription: 'Turn data into actionable insights',
-    fullDescription: 'Our data analytics services help you make sense of your business data and make informed decisions based on real insights.',
+    id: 'web-hosting',
+    icon: Server,
+    title: 'Web Hosting',
+    shortDescription: 'Reliable hosting for your website',
+    fullDescription: 'We offer secure and scalable web hosting solutions tailored to your needs.',
     features: [
-      'Data collection and analysis',
-      'Custom reporting',
-      'Predictive analytics',
-      'Data visualization',
-      'Performance metrics'
+      '99.9% uptime guarantee',
+      'Scalable hosting plans',
+      '24/7 support',
+      'Daily backups',
+      'SSL certification'
     ]
   },
   {
-    id: 'logo-creation',
+    id: 'logo-branding',
     icon: Palette,
-    title: 'Logo Creation',
-    shortDescription: 'Create a memorable brand identity',
-    fullDescription: 'We design unique, memorable logos that represent your brand\'s values and resonate with your target audience.',
+    title: 'Logo & Branding',
+    shortDescription: 'Build a strong brand identity',
+    fullDescription: 'We create logos and branding strategies that resonate with your audience and strengthen your business identity.',
     features: [
-      'Brand analysis',
-      'Custom design',
-      'Multiple concepts',
-      'Vector files',
-      'Brand guidelines'
+      'Logo design',
+      'Brand style guides',
+      'Marketing materials',
+      'Color palette creation',
+      'Brand messaging'
     ]
   },
   {
-    id: 'content-writing',
-    icon: FileText,
-    title: 'Content Writing',
-    shortDescription: 'Compelling content that converts',
-    fullDescription: 'Our professional content writers create engaging, SEO-optimized content that helps you connect with your audience and achieve your business goals.',
+    id: 'api-development',
+    icon: Code,
+    title: 'API Development',
+    shortDescription: 'Seamlessly connect systems and applications',
+    fullDescription: 'Our API development services facilitate smooth communication between different software components.',
     features: [
-      'Website content',
-      'Blog posts',
-      'Product descriptions',
-      'Technical writing',
-      'Copywriting'
+      'Custom API creation',
+      'Third-party integrations',
+      'API testing and debugging',
+      'Performance optimization',
+      'Documentation and support'
     ]
   },
   {
-    id: 'google-business',
-    icon: MapPin,
-    title: 'Google My Business',
-    shortDescription: 'Optimize your local presence',
-    fullDescription: 'We help you optimize your Google My Business profile to improve your local search presence and attract more customers.',
+    id: 'company-registration',
+    icon: Briefcase,
+    title: 'Company Registration (USA/UK/India)',
+    shortDescription: 'Hassle-free company registration services',
+    fullDescription: 'We assist in registering your company in the USA, UK, or India with complete legal compliance.',
     features: [
-      'Profile optimization',
-      'Local SEO',
-      'Review management',
-      'Post scheduling',
-      'Performance tracking'
-    ]
-  },
-  {
-    id: 'google-adsense',
-    icon: DollarSign,
-    title: 'Google AdSense',
-    shortDescription: 'Monetize your online content',
-    fullDescription: 'We help you implement and optimize Google AdSense to effectively monetize your website content while maintaining a great user experience.',
-    features: [
-      'Account setup',
-      'Ad placement optimization',
-      'Performance monitoring',
-      'Revenue optimization',
-      'Compliance management'
+      'Legal documentation',
+      'Business structure consultation',
+      'Government filings',
+      'Tax ID and EIN assistance',
+      'Ongoing compliance support'
     ]
   }
 ];
