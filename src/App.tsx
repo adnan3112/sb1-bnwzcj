@@ -9,20 +9,22 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import ServiceDetail from './pages/ServiceDetail';
+import ScrollToTop from './components/ScrollToTop'; // Import ScrollToTop component
 
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 800,  // Slowed down duration for smoother animations
-      easing: 'ease-in-out',  // Slower and smoother easing
-      once: true,  // Ensure animation happens only once
-      offset: 100,  // Trigger animation 100px before it reaches the viewport
-      delay: 0,  // No delay for immediate animation effect
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100,
+      delay: 0,
     });
   }, []);
 
   return (
     <Router>
+      <ScrollToTop /> {/* Add ScrollToTop component here */}
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
