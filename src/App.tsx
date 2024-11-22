@@ -9,7 +9,8 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import ServiceDetail from './pages/ServiceDetail';
-import ScrollToTop from './components/ScrollToTop'; // Import ScrollToTop component
+import ScrollToTop from './components/ScrollToTop'; // Correct path
+ // Import ScrollToTop component
 
 function App() {
   useEffect(() => {
