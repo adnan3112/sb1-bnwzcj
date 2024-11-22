@@ -13,8 +13,11 @@ import ServiceDetail from './pages/ServiceDetail';
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
-      once: true,
+      duration: 500,  // Reduced duration for faster animations
+      easing: 'ease-out-quint',  // Faster and smooth easing
+      once: true,  // Ensure animation happens only once
+      offset: 100,  // Trigger animation 100px before it reaches the viewport
+      delay: 0,  // No delay for a more responsive animation
     });
   }, []);
 
