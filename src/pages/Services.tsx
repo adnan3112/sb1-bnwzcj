@@ -25,7 +25,7 @@ const Services = () => {
           <p 
             className="text-lg sm:text-xl max-w-2xl mx-auto"
             data-aos="fade-up"
-            data-aos-delay="100"
+            data-aos-delay="50" // Reduced delay
           >
             Comprehensive digital solutions to help your sector grow and succeed
           </p>
@@ -44,7 +44,7 @@ const Services = () => {
                   to={`/services/${service.id}`}
                   className="card group hover:bg-primary hover:text-white transition-all duration-200 p-6"
                   data-aos="fade-up"
-                  data-aos-delay={index * 100}
+                  data-aos-delay={index * 50} // Reduced delay to 50ms between items
                 >
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-secondary text-white flex items-center justify-center">
