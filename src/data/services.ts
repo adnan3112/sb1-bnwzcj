@@ -48,17 +48,34 @@ export const services = [
     ]
   },
   {
-    id: 'ui-ux-design',
-    icon: PenTool,
-    title: 'UI/UX Design',
-    shortDescription: 'Exceptional designs for exceptional user experiences',
-    fullDescription: 'We craft intuitive, engaging user interfaces and experiences that captivate your audience and enhance usability.',
+    id: 'erp-solutions',
+    icon: Database,
+    title: 'ERP Solutions',
+    shortDescription: 'Streamline and integrate your business processes',
+    fullDescription: 'Our ERP solutions help businesses automate and integrate key functions such as inventory, accounting, HR, and more, enabling efficient workflows and data-driven decisions.',
     features: [
-      'User research and personas',
-      'Wireframing and prototyping',
-      'Responsive design',
-      'Usability testing',
-      'Interaction design'
+      'Custom ERP development',
+      'Inventory management',
+      'Accounting and finance modules',
+      'HR and payroll automation',
+      'Real-time reporting and analytics',
+      'CRM and sales integration',
+      'Mobile access to ERP systems',
+      'Ongoing support and updates'
+    ]
+  },
+  {
+    id: 'ecommerce-development',
+    icon: Globe,
+    title: 'Ecommerce Website Development',
+    shortDescription: 'Scalable solutions for online businesses',
+    fullDescription: 'We design and develop powerful e-commerce platforms that offer seamless shopping experiences and drive sales.',
+    features: [
+      'Custom e-commerce platforms',
+      'Payment gateway integration',
+      'Inventory management',
+      'Mobile-friendly design',
+      'SEO optimization'
     ]
   },
   {
@@ -87,20 +104,6 @@ export const services = [
       'Process optimization',
       'Risk analysis',
       'Customized action plans'
-    ]
-  },
-  {
-    id: 'ecommerce-development',
-    icon: Globe,
-    title: 'Ecommerce Website Development',
-    shortDescription: 'Scalable solutions for online businesses',
-    fullDescription: 'We design and develop powerful e-commerce platforms that offer seamless shopping experiences and drive sales.',
-    features: [
-      'Custom e-commerce platforms',
-      'Payment gateway integration',
-      'Inventory management',
-      'Mobile-friendly design',
-      'SEO optimization'
     ]
   },
   {
@@ -160,6 +163,20 @@ export const services = [
     ]
   },
   {
+    id: 'api-development',
+    icon: Code,
+    title: 'API Development',
+    shortDescription: 'Seamlessly connect systems and applications',
+    fullDescription: 'Our API development services facilitate smooth communication between different software components.',
+    features: [
+      'Custom API creation',
+      'Third-party integrations',
+      'API testing and debugging',
+      'Performance optimization',
+      'Documentation and support'
+    ]
+  },
+  {
     id: 'link-building-services',
     icon: Link2,
     title: 'Link Building Services',
@@ -199,20 +216,6 @@ export const services = [
       'Marketing materials',
       'Color palette creation',
       'Brand messaging'
-    ]
-  },
-  {
-    id: 'api-development',
-    icon: Code,
-    title: 'API Development',
-    shortDescription: 'Seamlessly connect systems and applications',
-    fullDescription: 'Our API development services facilitate smooth communication between different software components.',
-    features: [
-      'Custom API creation',
-      'Third-party integrations',
-      'API testing and debugging',
-      'Performance optimization',
-      'Documentation and support'
     ]
   },
   {
