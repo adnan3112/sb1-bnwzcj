@@ -1,0 +1,14 @@
+# Allow all search engines to access all content
+User-agent: *
+Disallow:
+
+# If you have private sections or admin areas, you can block them like so:
+# Disallow: /admin/
+# Disallow: /private/
+
+# Block a specific bot (e.g., if you have a bad bot trying to crawl)
+# User-agent: BadBot
+# Disallow: /
+
+# Sitemap location (replace with your actual sitemap URL if available)
+Sitemap: https://growwdigitally.com/sitemap.xml
