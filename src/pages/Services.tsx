@@ -1,9 +1,17 @@
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { services } from '../data/services';
 
 const Services = () => {
   return (
     <div>
+      {/* Set Page Metadata */}
+      <Helmet>
+        <title>Our Services | Comprehensive Digital Solutions</title>
+        <meta name="description" content="Explore our range of digital solutions, including website development, SEO services, ERP solutions, and more." />
+        <meta name="keywords" content="digital solutions, IT services, website development, SEO" />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="bg-primary text-white py-20 sm:py-32">
         <div className="container text-center">
