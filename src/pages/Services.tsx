@@ -18,14 +18,14 @@ const Services = () => {
           <h1 
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
             data-aos="fade-up"
-            data-aos-duration="300" // Reduced duration
+            data-aos-duration="300" 
           >
             Our Services
           </h1>
           <p 
             className="text-lg sm:text-xl max-w-2xl mx-auto"
             data-aos="fade-up"
-            data-aos-delay="50" // Reduced delay
+            data-aos-delay="100" // Reduced delay
           >
             Comprehensive digital solutions to help your sector grow and succeed
           </p>
