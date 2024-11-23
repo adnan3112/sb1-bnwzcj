@@ -13,7 +13,8 @@ const Navbar = () => {
     { name: 'Contact', path: '/contact' },
   ];
 
-  const isActive = (path) => location.pathname === path;
+  // Explicitly define the type of 'path' as a string
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav className="bg-primary text-white">
