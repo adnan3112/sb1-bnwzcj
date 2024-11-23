@@ -10,7 +10,7 @@ const Services = () => {
           <h1 
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
             data-aos="fade-up"
-            data-aos-duration="200"  {/* Reduced duration */}
+            data-aos-duration="200" // Reduced duration
           >
             Our Services
           </h1>
@@ -18,7 +18,6 @@ const Services = () => {
             className="text-lg sm:text-xl max-w-2xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="100"
-            data-aos-duration="200"  {/* Reduced duration */}
           >
             Comprehensive digital solutions to help your sector grow and succeed
           </p>
@@ -35,10 +34,9 @@ const Services = () => {
                 <Link
                   key={service.id}
                   to={`/services/${service.id}`}
-                  className="card group hover:bg-primary hover:text-white transition-all duration-200 p-6"  {/* Faster transition */}
+                  className="card group hover:bg-primary hover:text-white transition-all duration-300 p-6"
                   data-aos="fade-up"
                   data-aos-delay={index * 100}
-                  data-aos-duration="200"  {/* Reduced duration */}
                 >
                   <div className="flex items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-secondary text-white flex items-center justify-center">
