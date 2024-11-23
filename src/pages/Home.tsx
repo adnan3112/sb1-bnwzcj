@@ -1,9 +1,17 @@
+import { Helmet } from 'react-helmet'; // Import Helmet for SEO
 import { Link } from 'react-router-dom';
 import { ArrowRight, Code, Rocket, Target, Users } from 'lucide-react';
 
 const Home = () => {
   return (
     <div>
+      {/* Set Page Metadata */}
+      <Helmet>
+        <title>Groww Digitally</title>
+        <meta name="description" content="Groww Digitally provides innovative IT solutions, digital transformation, and custom services to help businesses thrive in the digital era." />
+        <meta name="keywords" content="digital solutions, IT services, custom software, digital transformation, technology company, innovation, collaboration" />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="bg-primary text-white py-20 sm:py-32">
         <div className="container mx-auto px-4">
