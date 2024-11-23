@@ -10,7 +10,7 @@ const Services = () => {
           <h1 
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
             data-aos="fade-up"
-            data-aos-duration="200" // Reduced duration
+            data-aos-duration="300" // Reduced duration
           >
             Our Services
           </h1>
@@ -34,7 +34,7 @@ const Services = () => {
                 <Link
                   key={service.id}
                   to={`/services/${service.id}`}
-                  className="card group hover:bg-primary hover:text-white transition-all duration-300 p-6"
+                  className="card group hover:bg-primary hover:text-white transition-all duration-200 p-6"
                   data-aos="fade-up"
                   data-aos-delay={index * 100}
                 >
