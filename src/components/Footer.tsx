@@ -87,7 +87,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               growwdigitally.com
-            </a>.
+            </a>
           </p>
         </div>
       </div>
