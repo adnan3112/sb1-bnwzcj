@@ -13,11 +13,24 @@
   body {
     @apply bg-light text-[#36B7C3]; /* Set primary text color */
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
   }
 
   a {
     @apply text-[#36B7C3] hover:text-[#36B7C3]/90; /* Set link color */
     transition: color 0.3s ease-in-out;
+  }
+
+  /* Custom CSS Reset */
+  h1, h2, h3, p, ul, ol, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Setting the scroll-behavior for smooth scrolling */
+  .scroll-smooth {
+    scroll-behavior: smooth;
   }
 }
 
@@ -47,12 +60,7 @@
 
   /* Cards with zoom-in effect on hover */
   .card {
-    @apply bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 ease-in-out transform hover:scale-105 transition-transform duration-200; /* Reduced duration for smoother animation */
-  }
-
-  /* Responsive Grid */
-  .grid-responsive {
-    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+    @apply bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 ease-in-out transform hover:scale-105 transition-transform duration-200;
   }
 
   /* Flexbox for alignment */
@@ -78,7 +86,7 @@
   .input-field {
     @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#36B7C3] focus:border-transparent transition duration-200;
   }
-  
+
   .input-field:focus {
     @apply outline-none;
   }

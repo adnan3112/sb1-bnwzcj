@@ -23,7 +23,7 @@ const Home = () => {
             </p>
             <Link 
               to="/contact"
-              className="btn btn-secondary inline-flex items-center px-6 py-3"
+              className="btn btn-secondary inline-flex items-center px-8 py-4"  // Increased padding
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -100,7 +100,7 @@ const Home = () => {
           </p>
           <Link 
             to="/contact"
-            className="btn bg-white text-secondary hover:bg-gray-100 inline-flex items-center px-6 py-3"
+            className="btn bg-white text-secondary hover:bg-gray-100 inline-flex items-center px-8 py-4" // Increased padding
             data-aos="fade-up"
             data-aos-delay="200"
           >
