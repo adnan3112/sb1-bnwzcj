@@ -20,6 +20,20 @@ import {
 
 export const services = [
   {
+    id: 'website-development',
+    icon: Monitor,
+    title: 'Website Development',
+    shortDescription: 'Professional websites tailored to your business needs',
+    fullDescription: 'Our website development services ensure your online presence is impactful and user-friendly. We create responsive, secure, and visually stunning websites tailored to your goals.',
+    features: [
+      'Custom website design',
+      'Responsive development',
+      'SEO-friendly architecture',
+      'E-commerce integration',
+      'Maintenance and support'
+    ]
+  },
+  {
     id: 'custom-software',
     icon: Code,
     title: 'Custom Software Development',
@@ -31,34 +45,6 @@ export const services = [
       'Quality assurance and testing',
       'Deployment and maintenance',
       'Ongoing support and updates'
-    ]
-  },
-  {
-    id: 'consultation-services',
-    icon: Users,
-    title: 'Consultation Services',
-    shortDescription: 'Expert advice to take your business forward',
-    fullDescription: 'Our consultation services offer strategic insights and practical solutions to help your business navigate challenges and achieve success.',
-    features: [
-      'Business strategy consultation',
-      'Technology planning',
-      'Process optimization',
-      'Risk analysis',
-      'Customized action plans'
-    ]
-  },
-  {
-    id: 'lead-generation',
-    icon: Megaphone,
-    title: 'Lead Generation',
-    shortDescription: 'Capture and nurture potential customers',
-    fullDescription: 'We implement proven strategies to attract and convert leads, ensuring a steady flow of potential customers for your business.',
-    features: [
-      'Targeted lead campaigns',
-      'Email and social media strategies',
-      'Lead scoring and nurturing',
-      'Analytics and reporting',
-      'CRM integration'
     ]
   },
   {
@@ -76,6 +62,34 @@ export const services = [
     ]
   },
   {
+    id: 'mobile-app-development',
+    icon: Smartphone,
+    title: 'Mobile App Development',
+    shortDescription: 'Apps that empower your business on-the-go',
+    fullDescription: 'Our mobile app development services deliver high-performance, feature-rich applications for Android and iOS.',
+    features: [
+      'Custom app design',
+      'Native and cross-platform apps',
+      'API integrations',
+      'Performance optimization',
+      'App store deployment'
+    ]
+  },
+  {
+    id: 'consultation-services',
+    icon: Users,
+    title: 'Consultation Services',
+    shortDescription: 'Expert advice to take your business forward',
+    fullDescription: 'Our consultation services offer strategic insights and practical solutions to help your business navigate challenges and achieve success.',
+    features: [
+      'Business strategy consultation',
+      'Technology planning',
+      'Process optimization',
+      'Risk analysis',
+      'Customized action plans'
+    ]
+  },
+  {
     id: 'ecommerce-development',
     icon: Globe,
     title: 'Ecommerce Website Development',
@@ -90,17 +104,17 @@ export const services = [
     ]
   },
   {
-    id: 'mobile-app-development',
-    icon: Smartphone,
-    title: 'Mobile App Development',
-    shortDescription: 'Apps that empower your business on-the-go',
-    fullDescription: 'Our mobile app development services deliver high-performance, feature-rich applications for Android and iOS.',
+    id: 'lead-generation',
+    icon: Megaphone,
+    title: 'Lead Generation',
+    shortDescription: 'Capture and nurture potential customers',
+    fullDescription: 'We implement proven strategies to attract and convert leads, ensuring a steady flow of potential customers for your business.',
     features: [
-      'Custom app design',
-      'Native and cross-platform apps',
-      'API integrations',
-      'Performance optimization',
-      'App store deployment'
+      'Targeted lead campaigns',
+      'Email and social media strategies',
+      'Lead scoring and nurturing',
+      'Analytics and reporting',
+      'CRM integration'
     ]
   },
   {
