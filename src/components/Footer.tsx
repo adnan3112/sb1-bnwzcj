@@ -79,15 +79,16 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
           <p>
-            For more services visit{' '}
+            &copy; {new Date().getFullYear()}{' '}
             <a 
               href="https://www.growwdigitally.com" 
               className="text-blue-500 hover:text-blue-700" 
               target="_blank" 
               rel="noopener noreferrer"
             >
-              growwdigitally.com
+              Groww Digitally
             </a>
+            . All rights reserved.
           </p>
         </div>
       </div>

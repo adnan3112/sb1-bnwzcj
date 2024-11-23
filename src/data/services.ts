@@ -217,19 +217,5 @@ export const services = [
       'Color palette creation',
       'Brand messaging'
     ]
-  },
-  {
-    id: 'company-registration',
-    icon: Briefcase,
-    title: 'Company Registration (USA/UK/India)',
-    shortDescription: 'Hassle-free company registration services',
-    fullDescription: 'We assist in registering your company in the USA, UK, or India with complete legal compliance.',
-    features: [
-      'Legal documentation',
-      'Business structure consultation',
-      'Government filings',
-      'Tax ID and EIN assistance',
-      'Ongoing compliance support'
-    ]
   }
 ];
