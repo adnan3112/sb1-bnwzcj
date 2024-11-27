@@ -7,38 +7,38 @@
 @layer base {
   html {
     font-family: 'Albert Sans', sans-serif;
-    scroll-behavior: smooth; /* Applied globally */
+    scroll-behavior: smooth; /* Global smooth scrolling */
   }
 
   body {
-    @apply bg-light text-[#36B7C3]; /* Set primary text color */
-    line-height: 1.6;
+    @apply bg-light text-[#36B7C3]; /* Light background and primary text color */
     margin: 0;
     padding: 0;
-    font-size: 16px; /* Set a base font size for accessibility */
+    line-height: 1.6;
+    font-size: 16px; /* Accessibility-friendly base font size */
   }
 
   /* Links */
   a {
-    @apply text-[#36B7C3] hover:text-[#36B7C3]/90; /* Set link color */
+    @apply text-[#36B7C3] hover:text-[#36B7C3]/90; /* Link color and hover state */
     transition: color 0.3s ease-in-out;
-    text-decoration: none; /* Remove underline for links */
+    text-decoration: none; /* Remove default underline */
   }
 
-  /* Reset margins and padding */
+  /* Reset margins and paddings */
   h1, h2, h3, p, ul, ol, li, blockquote, pre, code {
     margin: 0;
     padding: 0;
   }
 
-  /* Setting the scroll-behavior for smooth scrolling */
+  /* Custom classes for smooth scrolling */
   .scroll-smooth {
     scroll-behavior: smooth;
   }
 }
 
 @layer components {
-  /* Buttons */
+  /* Button Styles */
   .btn {
     @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 ease-in-out;
   }
@@ -51,87 +51,79 @@
     @apply bg-secondary text-white hover:bg-secondary/90 focus:ring-2 focus:ring-secondary/50;
   }
 
-  /* Container */
+  /* Container for consistent alignment */
   .container {
     @apply max-w-full sm:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Sections */
+  /* Section styles */
   .section {
     @apply py-16 sm:py-20 md:py-24;
   }
 
-  /* Cards with zoom-in effect on hover */
+  /* Cards with hover effect */
   .card {
-    @apply bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 ease-in-out transform hover:scale-105 transition-transform duration-200;
+    @apply bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-200;
   }
 
-  /* Flexbox for alignment */
+  /* Flexbox utilities for alignment */
   .flex-center {
     @apply flex items-center justify-center;
   }
 
-  /* Typography */
+  /* Typography styles */
   .title {
-    @apply text-3xl md:text-4xl font-semibold text-center text-[#36B7C3]; /* Set title text color */
+    @apply text-3xl md:text-4xl font-semibold text-center text-[#36B7C3];
   }
 
   .subheading {
     @apply text-xl text-gray-600 text-center max-w-3xl mx-auto;
   }
 
-  /* Section Title */
-  .section-title {
-    @apply text-2xl md:text-3xl font-bold text-[#36B7C3] text-center mb-6; /* Set section title color */
-  }
-
   /* Input Fields */
   .input-field {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#36B7C3] focus:border-transparent transition duration-200;
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#36B7C3] transition duration-200;
   }
 
   .input-field:focus {
-    @apply outline-none;
+    @apply outline-none focus:border-transparent;
   }
 }
 
 @layer utilities {
-  /* Custom Utilities */
-  .scroll-smooth {
-    scroll-behavior: smooth;
+  /* Responsive grid utilities */
+  .grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8;
   }
 
-  /* Hover/Focus Effects */
-  .focus-ring-primary {
-    @apply focus:ring-2 focus:ring-[#36B7C3]/50;
+  /* Utility for scroll behavior */
+  .scroll-smooth {
+    scroll-behavior: smooth;
   }
 
   /* Adjustments for smaller screens */
   @media (max-width: 640px) {
     .btn {
-      @apply px-6 py-3; /* Make buttons more compact on small screens */
-    }
-
-    .grid-responsive {
-      @apply grid-cols-1; /* Stack grid items on small screens */
+      @apply px-4 py-2; /* Compact button on small screens */
     }
 
     .section-title {
-      @apply text-xl; /* Make section titles smaller on small screens */
+      @apply text-xl; /* Smaller titles on small screens */
     }
 
     .container {
-      @apply px-4; /* Remove padding on smaller screens */
+      @apply px-4; /* Reduce padding */
     }
   }
 
+  /* Adjustments for medium screens */
   @media (max-width: 1024px) {
     .container {
-      @apply px-6; /* Reduce padding on medium screens */
+      @apply px-6; /* Slightly larger padding for medium screens */
     }
 
     .card {
-      @apply p-6; /* Ensure uniform padding for cards */
+      @apply p-6; /* Consistent padding for cards */
     }
   }
 }
