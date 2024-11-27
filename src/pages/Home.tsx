@@ -1,8 +1,10 @@
-import { Helmet } from 'react-helmet'; // For SEO
+import { Helmet } from 'react-helmet'; // Import Helmet for SEO
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, TrendingUp, Briefcase, Globe, Users, Cog } from 'lucide-react';
+import { ArrowRight, Code, Rocket, Target, Users, Lock, BarChart } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react'; // For carousel
+import 'swiper/css'; // Import Swiper styles
 
-const HomePage = () => {
+const Home = () => {
   return (
     <div>
       {/* Set Page Metadata */}
@@ -16,86 +18,36 @@ const HomePage = () => {
       <section className="bg-primary text-white py-20 sm:py-32">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 
-              className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6"
-              data-aos="fade-up"
-            >
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
               Planting Seeds for Your Digital Future
             </h1>
-            <p 
-              className="text-lg sm:text-xl mb-8"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              Empowering different sectors through innovative IT solutions and digital transformation.
+            <p className="text-lg sm:text-xl mb-8">
+              Empowering different sectors through innovative IT solutions and digital transformation
             </p>
-            <Link 
-              to="/contact"
-              className="btn btn-secondary inline-flex items-center px-8 py-4" 
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <Link to="/contact" className="btn btn-secondary inline-flex items-center px-8 py-4">
               Contact Us <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column */}
-            <div data-aos="fade-right">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6">Why Choose Us</h2>
-              <ul className="space-y-4 text-gray-700">
-                <li>✅ Personalized approach tailored to your needs.</li>
-                <li>✅ Cutting-edge technologies and best practices.</li>
-                <li>✅ Reliable support and on-time project delivery.</li>
-                <li>✅ Dedicated team of skilled professionals.</li>
-              </ul>
-            </div>
-
-            {/* Right Column */}
-            <div className="grid grid-cols-2 gap-6" data-aos="fade-left">
-              {[
-                { icon: <Shield className="h-10 w-10 text-secondary" />, label: 'Security' },
-                { icon: <TrendingUp className="h-10 w-10 text-secondary" />, label: 'Scalability' },
-                { icon: <Briefcase className="h-10 w-10 text-secondary" />, label: 'Professionalism' },
-                { icon: <Cog className="h-10 w-10 text-secondary" />, label: 'Innovative Solutions' },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center text-center bg-white shadow-lg p-4 rounded-lg"
-                >
-                  {item.icon}
-                  <p className="mt-4 font-semibold">{item.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-12">Our Benefits</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Our Values Section */}
+      <section className="section bg-light">
+        <div className="container">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Our Core Values</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: <Shield className="h-10 w-10" />, label: 'Robust Security' },
-              { icon: <TrendingUp className="h-10 w-10" />, label: 'Scalable Solutions' },
-              { icon: <Cog className="h-10 w-10" />, label: 'Custom Integrations' },
-              { icon: <Users className="h-10 w-10" />, label: 'Dedicated Support' },
-              { icon: <Briefcase className="h-10 w-10" />, label: 'Expert Team' },
-              { icon: <Globe className="h-10 w-10" />, label: 'Global Reach' },
-            ].map((benefit, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center bg-secondary text-white p-6 rounded-lg shadow-md"
-              >
-                <div className="mb-4">{benefit.icon}</div>
-                <p className="font-semibold">{benefit.label}</p>
+              { icon: <Code className="h-8 w-8" />, title: 'Innovation', description: 'Pushing boundaries with cutting-edge solutions' },
+              { icon: <Users className="h-8 w-8" />, title: 'Collaboration', description: 'Working together to achieve excellence' },
+              { icon: <Target className="h-8 w-8" />, title: 'Precision', description: 'Attention to detail in every project' },
+              { icon: <Rocket className="h-8 w-8" />, title: 'Growth', description: 'Continuous improvement and learning' },
+            ].map((value, index) => (
+              <div key={value.title} className="card text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary text-white mb-4 mx-auto">
+                  {value.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
               </div>
             ))}
           </div>
@@ -103,42 +55,72 @@ const HomePage = () => {
       </section>
 
       {/* Industries We Serve Section */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
-            Industries We Serve
-          </h2>
-          <div className="relative">
-            {/* Carousel Slider */}
-            <div className="carousel flex overflow-x-auto space-x-6">
-              {[
-                { industry: 'Retail', description: 'E-commerce and supply chain solutions.' },
-                { industry: 'Healthcare', description: 'Healthcare IT and patient systems.' },
-                { industry: 'Education', description: 'EdTech platforms and LMS.' },
-                { industry: 'Finance', description: 'Banking and FinTech innovations.' },
-                { industry: 'Manufacturing', description: 'Automation and IoT integrations.' },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex-none w-80 bg-white rounded-lg shadow-md p-6 text-center"
-                  data-aos="fade-up"
-                >
-                  <h3 className="text-xl font-semibold mb-4">{item.industry}</h3>
-                  <p className="text-gray-700">{item.description}</p>
+      <section className="section bg-white">
+        <div className="container">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Industries We Serve</h2>
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={3}
+            loop={true}
+            autoplay={{ delay: 3000 }}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
+            {[
+              { name: 'Retail', description: 'Optimize sales channels and enhance customer experience', icon: <BarChart className="h-12 w-12 text-primary" /> },
+              { name: 'Healthcare', description: 'Innovative solutions for better patient care', icon: <Lock className="h-12 w-12 text-primary" /> },
+              { name: 'Finance', description: 'Secure and scalable financial platforms', icon: <Rocket className="h-12 w-12 text-primary" /> },
+              { name: 'Education', description: 'Transforming learning through digital tools', icon: <Code className="h-12 w-12 text-primary" /> },
+            ].map((industry) => (
+              <SwiperSlide key={industry.name}>
+                <div className="text-center p-6 bg-light rounded-lg shadow-lg">
+                  <div className="mb-4">{industry.icon}</div>
+                  <h3 className="text-xl font-semibold">{industry.name}</h3>
+                  <p className="text-gray-600">{industry.description}</p>
                 </div>
-              ))}
-            </div>
-            {/* Navigation Indicators (Optional) */}
-            <div className="absolute inset-x-0 flex justify-center mt-6">
-              <button className="h-2 w-2 rounded-full bg-secondary mx-1"></button>
-              <button className="h-2 w-2 rounded-full bg-gray-400 mx-1"></button>
-              <button className="h-2 w-2 rounded-full bg-gray-400 mx-1"></button>
-            </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
+      {/* Our Process Section */}
+      <section className="section bg-gray-100">
+        <div className="container">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Our Process</h2>
+          <div className="flex flex-col md:flex-row justify-between items-start">
+            {[
+              { title: 'Discovery & Analysis', description: 'Understanding your goals and challenges to craft a tailored solution.', icon: <Target className="h-10 w-10 text-secondary" /> },
+              { title: 'Design & Planning', description: 'Crafting intuitive designs and comprehensive project plans.', icon: <Rocket className="h-10 w-10 text-secondary" /> },
+              { title: 'Development', description: 'Building robust, scalable, and secure software solutions.', icon: <Code className="h-10 w-10 text-secondary" /> },
+              { title: 'Deployment & Support', description: 'Ensuring smooth implementation and ongoing support.', icon: <Users className="h-10 w-10 text-secondary" /> },
+            ].map((step, index) => (
+              <div key={index} className="text-center mx-auto mb-8 md:mb-0 md:mr-8">
+                <div className="mb-4">{step.icon}</div>
+                <h3 className="text-xl font-semibold">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section bg-secondary text-white">
+        <div className="container text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Grow Digitally?</h2>
+          <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
+            Let's transform your sector with our innovative IT solutions
+          </p>
+          <Link to="/contact" className="btn bg-white text-secondary hover:bg-gray-100 inline-flex items-center px-8 py-4">
+            Get Started <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </div>
       </section>
     </div>
   );
 };
 
-export default HomePage;
+export default Home;
