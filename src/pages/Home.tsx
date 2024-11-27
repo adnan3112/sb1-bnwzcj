@@ -1,80 +1,122 @@
-import { Helmet } from 'react-helmet';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import { Lock, Rocket, BarChart, Code, Users, Target } from 'lucide-react';
+import { Helmet } from 'react-helmet'; // Import Helmet for SEO
+import { Link } from 'react-router-dom';
+import { ArrowRight, Code, Rocket, Target, Users, Lock, BarChart } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react'; // For carousel
+import 'swiper/css'; // Import Swiper styles
 
 const Home = () => {
-  const industries = [
-    { name: 'Retail', description: 'Optimize sales channels and enhance customer experience', icon: <BarChart className="h-12 w-12 text-primary" /> },
-    { name: 'Healthcare', description: 'Innovative solutions for better patient care', icon: <Lock className="h-12 w-12 text-primary" /> },
-    { name: 'Finance', description: 'Secure and scalable financial platforms', icon: <Rocket className="h-12 w-12 text-primary" /> },
-    { name: 'Education', description: 'Transforming learning through digital tools', icon: <Code className="h-12 w-12 text-primary" /> },
-  ];
-
-  const processSteps = [
-    { title: 'Discovery & Analysis', description: 'Understanding your goals and challenges to craft a tailored solution.', icon: <Target className="h-10 w-10 text-secondary" /> },
-    { title: 'Design & Planning', description: 'Crafting intuitive designs and comprehensive project plans.', icon: <Rocket className="h-10 w-10 text-secondary" /> },
-    { title: 'Development', description: 'Building robust, scalable, and secure software solutions.', icon: <Code className="h-10 w-10 text-secondary" /> },
-    { title: 'Deployment & Support', description: 'Ensuring smooth implementation and ongoing support.', icon: <Users className="h-10 w-10 text-secondary" /> },
-  ];
-
-  const benefits = [
-    { title: 'Security', description: 'Industry-leading data protection.', icon: <Lock className="h-8 w-8 text-secondary" /> },
-    { title: 'Scalability', description: 'Easily grow with demand.', icon: <BarChart className="h-8 w-8 text-secondary" /> },
-    { title: 'Efficiency', description: 'Streamlined processes.', icon: <Rocket className="h-8 w-8 text-secondary" /> },
-    { title: 'Customization', description: 'Solutions tailored for you.', icon: <Code className="h-8 w-8 text-secondary" /> },
-    { title: 'Collaboration', description: 'We work together to succeed.', icon: <Users className="h-8 w-8 text-secondary" /> },
-    { title: 'Innovation', description: 'Forward-thinking technology.', icon: <Target className="h-8 w-8 text-secondary" /> },
-  ];
-
   return (
     <div>
+      {/* Set Page Metadata */}
       <Helmet>
         <title>Groww Digitally</title>
-        <meta name="description" content="Innovative IT solutions for businesses." />
+        <meta name="description" content="Groww Digitally provides innovative IT solutions, digital transformation, and custom services to help businesses thrive in the digital era." />
+        <meta name="keywords" content="digital solutions, IT services, custom software, digital transformation, technology company, innovation, collaboration" />
       </Helmet>
 
-      {/* Industries Section */}
-      <section className="section bg-white">
-        <h2 className="section-title">Industries We Serve</h2>
-        <Swiper loop={true} autoplay={{ delay: 3000 }} spaceBetween={20} slidesPerView={3} breakpoints={{ 640: { slidesPerView: 1 }, 1024: { slidesPerView: 3 } }}>
-          {industries.map((industry, index) => (
-            <SwiperSlide key={index}>
-              <div className="card text-center">
-                {industry.icon}
-                <h3 className="text-xl font-semibold mt-4">{industry.name}</h3>
-                <p className="text-gray-600">{industry.description}</p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
-
-      {/* Our Process Section */}
-      <section className="section bg-gray-100">
-        <h2 className="section-title">Our Process</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {processSteps.map((step, index) => (
-            <div key={index} className="text-center">
-              {step.icon}
-              <h3 className="text-xl font-semibold mt-4">{step.title}</h3>
-              <p className="text-gray-600">{step.description}</p>
-            </div>
-          ))}
+      {/* Hero Section */}
+      <section className="bg-primary text-white py-20 sm:py-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+              Planting Seeds for Your Digital Future
+            </h1>
+            <p className="text-lg sm:text-xl mb-8">
+              Empowering different sectors through innovative IT solutions and digital transformation
+            </p>
+            <Link to="/contact" className="btn btn-secondary inline-flex items-center px-8 py-4">
+              Contact Us <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="section bg-light">
-        <h2 className="section-title">Benefits</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="card text-center">
-              {benefit.icon}
-              <h3 className="text-xl font-semibold mt-4">{benefit.title}</h3>
-              <p className="text-gray-600">{benefit.description}</p>
-            </div>
-          ))}
+      {/* Our Values Section */}
+      <section className="section bg-light py-16">
+        <div className="container">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Our Core Values</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { icon: <Code className="h-10 w-10" />, title: 'Innovation', description: 'Pushing boundaries with cutting-edge solutions' },
+              { icon: <Users className="h-10 w-10" />, title: 'Collaboration', description: 'Working together to achieve excellence' },
+              { icon: <Target className="h-10 w-10" />, title: 'Precision', description: 'Attention to detail in every project' },
+              { icon: <Rocket className="h-10 w-10" />, title: 'Growth', description: 'Continuous improvement and learning' },
+            ].map((value, index) => (
+              <div key={value.title} className="card text-center p-6 bg-white rounded-lg shadow-lg">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary text-white mb-4 mx-auto">
+                  {value.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve Section */}
+      <section className="section bg-white py-16">
+        <div className="container">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Industries We Serve</h2>
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={3}
+            loop={true}
+            autoplay={{ delay: 3000 }}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
+            {[
+              { name: 'Retail', description: 'Optimize sales channels and enhance customer experience', icon: <BarChart className="h-12 w-12 text-primary" /> },
+              { name: 'Healthcare', description: 'Innovative solutions for better patient care', icon: <Lock className="h-12 w-12 text-primary" /> },
+              { name: 'Finance', description: 'Secure and scalable financial platforms', icon: <Rocket className="h-12 w-12 text-primary" /> },
+              { name: 'Education', description: 'Transforming learning through digital tools', icon: <Code className="h-12 w-12 text-primary" /> },
+            ].map((industry) => (
+              <SwiperSlide key={industry.name}>
+                <div className="text-center p-6 bg-light rounded-lg shadow-lg">
+                  <div className="mb-4">{industry.icon}</div>
+                  <h3 className="text-xl font-semibold">{industry.name}</h3>
+                  <p className="text-gray-600">{industry.description}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
+      {/* Our Process Section */}
+      <section className="section bg-gray-100 py-16">
+        <div className="container">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Our Process</h2>
+          <div className="flex flex-col md:flex-row justify-between items-start">
+            {[
+              { title: 'Discovery & Analysis', description: 'Understanding your goals and challenges to craft a tailored solution.', icon: <Target className="h-12 w-12 text-secondary" /> },
+              { title: 'Design & Planning', description: 'Crafting intuitive designs and comprehensive project plans.', icon: <Rocket className="h-12 w-12 text-secondary" /> },
+              { title: 'Development', description: 'Building robust, scalable, and secure software solutions.', icon: <Code className="h-12 w-12 text-secondary" /> },
+              { title: 'Deployment & Support', description: 'Ensuring smooth implementation and ongoing support.', icon: <Users className="h-12 w-12 text-secondary" /> },
+            ].map((step, index) => (
+              <div key={index} className="text-center mx-auto mb-8 md:mb-0 md:mr-8">
+                <div className="mb-4">{step.icon}</div>
+                <h3 className="text-xl font-semibold">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section bg-secondary text-white py-16">
+        <div className="container text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Grow Digitally?</h2>
+          <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
+            Let's transform your sector with our innovative IT solutions
+          </p>
+          <Link to="/contact" className="btn bg-white text-secondary hover:bg-gray-100 inline-flex items-center px-8 py-4">
+            Get Started <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </div>
       </section>
     </div>
