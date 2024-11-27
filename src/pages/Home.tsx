@@ -177,14 +177,20 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section bg-secondary text-white">
+      <section className="bg-secondary text-white py-16">
         <div className="container text-center">
-          <h2 className="section-title">Ready to Grow Digitally?</h2>
-          <p className="subheading max-w-2xl mx-auto">
-            Let's transform your sector with our innovative IT solutions
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            Ready to Grow Digitally?
+          </h2>
+          <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
+            Let's transform your sector with our innovative IT solutions. Get in touch today to begin your digital journey.
           </p>
-          <Link to="/contact" className="btn bg-white text-secondary">
-            Get Started <ArrowRight className="ml-2 h-5 w-5" />
+          <Link 
+            to="/contact" 
+            className="inline-flex items-center px-8 py-4 text-lg font-semibold bg-white text-secondary rounded-lg hover:bg-gray-100 transition-all duration-300"
+          >
+            Get Started
+            <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </div>
       </section>
