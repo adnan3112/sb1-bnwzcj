@@ -1,10 +1,20 @@
 import { Helmet } from 'react-helmet'; // Import Helmet for SEO
 import { Link } from 'react-router-dom';
-import { ArrowRight, Code, Rocket, Target, Users, Lock, BarChart } from 'lucide-react';
+import { ArrowRight, Code, Rocket, Target, Users, Lock, BarChart, School, Hospital, WalletCards, ShoppingCart } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react'; // For carousel
 import 'swiper/css'; // Import Swiper styles
+import { useEffect } from 'react';
+import { gsap } from 'gsap'; // For animations
 
 const Home = () => {
+  useEffect(() => {
+    // Animating the "Industries We Serve" section with GSAP
+    gsap.fromTo(".industry-card", 
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, stagger: 0.2, duration: 1 }
+    );
+  }, []);
+
   return (
     <div>
       {/* Set Page Metadata */}
@@ -41,7 +51,7 @@ const Home = () => {
               { icon: <Users className="h-10 w-10" />, title: 'Collaboration', description: 'Working together to achieve excellence' },
               { icon: <Target className="h-10 w-10" />, title: 'Precision', description: 'Attention to detail in every project' },
               { icon: <Rocket className="h-10 w-10" />, title: 'Growth', description: 'Continuous improvement and learning' },
-            ].map((value, index) => (
+            ].map((value) => (
               <div key={value.title} className="card text-center p-6 bg-white rounded-lg shadow-lg">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary text-white mb-4 mx-auto">
                   {value.icon}
@@ -67,15 +77,16 @@ const Home = () => {
               640: { slidesPerView: 1 },
               1024: { slidesPerView: 3 },
             }}
+            className="animate__animated animate__fadeIn" // Animation class added
           >
             {[
-              { name: 'Retail', description: 'Optimize sales channels and enhance customer experience', icon: <BarChart className="h-12 w-12 text-primary" /> },
-              { name: 'Healthcare', description: 'Innovative solutions for better patient care', icon: <Lock className="h-12 w-12 text-primary" /> },
-              { name: 'Finance', description: 'Secure and scalable financial platforms', icon: <Rocket className="h-12 w-12 text-primary" /> },
-              { name: 'Education', description: 'Transforming learning through digital tools', icon: <Code className="h-12 w-12 text-primary" /> },
+              { name: 'Retail', description: 'Optimize sales channels and enhance customer experience', icon: <ShoppingCart className="h-12 w-12 text-primary" /> },
+              { name: 'Healthcare', description: 'Innovative solutions for better patient care', icon: <Hospital className="h-12 w-12 text-primary" /> },
+              { name: 'Finance', description: 'Secure and scalable financial platforms', icon: <WalletCards className="h-12 w-12 text-primary" /> },
+              { name: 'Education', description: 'Transforming learning through digital tools', icon: <School className="h-12 w-12 text-primary" /> },
             ].map((industry) => (
               <SwiperSlide key={industry.name}>
-                <div className="text-center p-6 bg-light rounded-lg shadow-lg">
+                <div className="industry-card text-center p-6 bg-light rounded-lg shadow-lg">
                   <div className="mb-4">{industry.icon}</div>
                   <h3 className="text-xl font-semibold">{industry.name}</h3>
                   <p className="text-gray-600">{industry.description}</p>
