@@ -126,11 +126,11 @@ const Home = () => {
                 description: 'Innovative solutions for better patient care.',
                 icon: <Hospital className="h-12 w-12 text-primary" />,
               },
-              {
-                name: 'Finance',
-                description: 'Secure and scalable financial platforms.',
-                icon: <WalletCards className="h-12 w-12 text-primary" />,
-              },
+              // {
+              //   name: 'Finance',
+              //   description: 'Secure and scalable financial platforms.',
+              //   icon: <WalletCards className="h-12 w-12 text-primary" />,
+              // },
             ].map((industry) => (
               <div key={industry.name} className="card text-center">
                 <div className="mb-4">{industry.icon}</div>
