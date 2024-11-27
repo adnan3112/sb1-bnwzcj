@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet'; // Import Helmet for SEO
 import { Link } from 'react-router-dom';
-import { ArrowRight, Code, Rocket, Target, Users, Hospital, WalletCards, ShoppingCart, School, BriefcaseBusiness } from 'lucide-react'; // Import the new icon
+import { ArrowRight, Code, Rocket, Target, Users, Lock, BarChart, School, Hospital, WalletCards, ShoppingCart, BriefcaseBusiness } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react'; // For carousel
 import 'swiper/css'; // Import Swiper styles
 import { useEffect } from 'react';
@@ -50,7 +50,6 @@ const Home = () => {
             slidesPerView={3}
             loop={true}
             autoplay={{ delay: 3000 }}
-            direction="horizontal" // Ensure horizontal direction
             breakpoints={{
               640: { slidesPerView: 1 },
               1024: { slidesPerView: 3 },
@@ -59,14 +58,14 @@ const Home = () => {
           >
             {[
               { name: 'Education', description: 'Transforming learning through digital tools', icon: <School className="h-12 w-12 text-primary" /> },
-              { name: 'Business', description: 'Innovative solutions for modern business needs', icon: <BriefcaseBusiness className="h-12 w-12 text-primary" /> },  {/* Updated icon here */}
+              { name: 'Business', description: 'Innovative solutions for modern business needs', icon: <BriefcaseBusiness className="h-12 w-12 text-primary" /> },
               { name: 'Healthcare', description: 'Innovative solutions for better patient care', icon: <Hospital className="h-12 w-12 text-primary" /> },
               { name: 'Finance', description: 'Secure and scalable financial platforms', icon: <WalletCards className="h-12 w-12 text-primary" /> },
             ].map((industry) => (
               <SwiperSlide key={industry.name}>
                 <div className="industry-card text-center p-6 bg-light rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                  <div className="mb-4 flex justify-center">{industry.icon}</div> {/* Ensure icons are centered */}
-                  <h3 className="text-xl font-semibold mb-2">{industry.name}</h3>
+                  <div className="mb-4">{industry.icon}</div>
+                  <h3 className="text-xl font-semibold">{industry.name}</h3>
                   <p className="text-gray-600">{industry.description}</p>
                 </div>
               </SwiperSlide>
@@ -74,6 +73,27 @@ const Home = () => {
           </Swiper>
         </div>
       </section>
+
+      {/* Our Process Section */}
+      {/* <section className="section bg-gray-100 py-16">
+        <div className="container">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Our Process</h2>
+          <div className="flex flex-col md:flex-row justify-between items-start">
+            {[
+              { title: 'Discovery & Analysis', description: 'Understanding your goals and challenges to craft a tailored solution.', icon: <Target className="h-12 w-12 text-secondary" /> },
+              { title: 'Design & Planning', description: 'Crafting intuitive designs and comprehensive project plans.', icon: <Rocket className="h-12 w-12 text-secondary" /> },
+              { title: 'Development', description: 'Building robust, scalable, and secure software solutions.', icon: <Code className="h-12 w-12 text-secondary" /> },
+              { title: 'Deployment & Support', description: 'Ensuring smooth implementation and ongoing support.', icon: <Users className="h-12 w-12 text-secondary" /> },
+            ].map((step, index) => (
+              <div key={index} className="text-center mx-auto mb-8 md:mb-0 md:mr-8">
+                <div className="mb-4">{step.icon}</div>
+                <h3 className="text-xl font-semibold">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
 
       {/* CTA Section */}
       <section className="section bg-secondary text-white py-16">
