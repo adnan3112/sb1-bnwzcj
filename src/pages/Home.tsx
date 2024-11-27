@@ -41,29 +41,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Our Values Section */}
-      <section className="section bg-light py-16">
-        <div className="container">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Our Core Values</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { icon: <Code className="h-10 w-10" />, title: 'Innovation', description: 'Pushing boundaries with cutting-edge solutions' },
-              { icon: <Users className="h-10 w-10" />, title: 'Collaboration', description: 'Working together to achieve excellence' },
-              { icon: <Target className="h-10 w-10" />, title: 'Precision', description: 'Attention to detail in every project' },
-              { icon: <Rocket className="h-10 w-10" />, title: 'Growth', description: 'Continuous improvement and learning' },
-            ].map((value) => (
-              <div key={value.title} className="card text-center p-6 bg-white rounded-lg shadow-lg">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary text-white mb-4 mx-auto">
-                  {value.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Industries We Serve Section */}
       <section className="section bg-white py-16">
         <div className="container">
@@ -86,7 +63,7 @@ const Home = () => {
               { name: 'Education', description: 'Transforming learning through digital tools', icon: <School className="h-12 w-12 text-primary" /> },
             ].map((industry) => (
               <SwiperSlide key={industry.name}>
-                <div className="industry-card text-center p-6 bg-light rounded-lg shadow-lg">
+                <div className="industry-card text-center p-6 bg-light rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                   <div className="mb-4">{industry.icon}</div>
                   <h3 className="text-xl font-semibold">{industry.name}</h3>
                   <p className="text-gray-600">{industry.description}</p>
