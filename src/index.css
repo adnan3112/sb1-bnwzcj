@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 @layer base {
   html {
-    font-family: 'Albert Sans', sans-serif;
+    font-family: "Albert Sans", sans-serif;
     scroll-behavior: smooth; /* Applied globally */
   }
 
@@ -26,7 +26,16 @@
   }
 
   /* Reset margins and padding */
-  h1, h2, h3, p, ul, ol, li, blockquote, pre, code {
+  h1,
+  h2,
+  h3,
+  p,
+  ul,
+  ol,
+  li,
+  blockquote,
+  pre,
+  code {
     margin: 0;
     padding: 0;
   }
@@ -40,7 +49,7 @@
 @layer components {
   /* Buttons */
   .btn {
-    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 ease-in-out;
+    @apply px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-200 ease-in-out;
   }
 
   .btn-primary {
@@ -58,12 +67,12 @@
 
   /* Sections */
   .section {
-    @apply py-16 sm:py-20 md:py-24;
+    @apply py-12 sm:py-16 md:py-24;
   }
 
   /* Cards with zoom-in effect on hover */
   .card {
-    @apply bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 ease-in-out transform hover:scale-105 transition-transform duration-200;
+    @apply bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 ease-in-out transform hover:scale-105 transition-transform duration-200;
   }
 
   /* Flexbox for alignment */
@@ -87,7 +96,7 @@
 
   /* Input Fields */
   .input-field {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#36B7C3] focus:border-transparent transition duration-200;
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#36B7C3] focus:border-transparent transition duration-200;
   }
 
   .input-field:focus {
@@ -109,7 +118,7 @@
   /* Adjustments for smaller screens */
   @media (max-width: 640px) {
     .btn {
-      @apply px-6 py-3; /* Make buttons more compact on small screens */
+      @apply px-4 py-2; /* Make buttons more compact on small screens */
     }
 
     .grid-responsive {
@@ -131,7 +140,7 @@
     }
 
     .card {
-      @apply p-6; /* Ensure uniform padding for cards */
+      @apply p-4; /* Adjust padding for medium screens */
     }
   }
 }

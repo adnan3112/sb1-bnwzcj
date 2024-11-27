@@ -1,7 +1,5 @@
 import { Helmet } from 'react-helmet'; // For SEO
 import { Link } from 'react-router-dom'; // For navigation
-import { Swiper, SwiperSlide } from 'swiper/react'; // For carousel
-import 'swiper/css'; // Swiper styles
 import { useEffect } from 'react'; // For lifecycle methods
 import { gsap } from 'gsap'; // For animations
 import {
@@ -15,7 +13,6 @@ import {
   School,
   Hospital,
   WalletCards,
-  ShoppingCart,
   BriefcaseBusiness,
 } from 'lucide-react';
 
@@ -106,6 +103,45 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Industries We Serve Section */}
+      <section className="section bg-white py-16">
+        <div className="container">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
+            Industries We Serve
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Education',
+                description: 'Transforming learning through digital tools.',
+                icon: <School className="h-12 w-12 text-primary" />,
+              },
+              {
+                name: 'Business',
+                description: 'Innovative solutions for modern business needs.',
+                icon: <BriefcaseBusiness className="h-12 w-12 text-primary" />,
+              },
+              {
+                name: 'Healthcare',
+                description: 'Innovative solutions for better patient care.',
+                icon: <Hospital className="h-12 w-12 text-primary" />,
+              },
+              {
+                name: 'Finance',
+                description: 'Secure and scalable financial platforms.',
+                icon: <WalletCards className="h-12 w-12 text-primary" />,
+              },
+            ].map((industry) => (
+              <div key={industry.name} className="card text-center">
+                <div className="mb-4">{industry.icon}</div>
+                <h3 className="text-xl font-semibold">{industry.name}</h3>
+                <p className="text-gray-600">{industry.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="section bg-gray-100 py-16">
         <div className="container">
@@ -129,21 +165,6 @@ const Home = () => {
                 title: 'Performance',
                 description: 'Optimized systems for seamless operations.',
               },
-              {
-                icon: <Users className="h-10 w-10 text-secondary" />,
-                title: 'Collaboration',
-                description: 'Close partnerships to understand your needs.',
-              },
-              {
-                icon: <Target className="h-10 w-10 text-secondary" />,
-                title: 'Precision',
-                description: 'Tailored solutions to meet your goals.',
-              },
-              {
-                icon: <Code className="h-10 w-10 text-secondary" />,
-                title: 'Innovation',
-                description: 'Creative ideas to stay ahead of the curve.',
-              },
             ].map((benefit) => (
               <div key={benefit.title} className="card text-center">
                 <div className="mb-4">{benefit.icon}</div>
@@ -155,60 +176,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Industries We Serve Section */}
-      <section className="section bg-white py-16">
-        <div className="container">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
-            Industries We Serve
-          </h2>
-          <Swiper
-  spaceBetween={20}
-  slidesPerView={3}
-  loop={true}
-  autoplay={{
-    delay: 0, // No delay
-    disableOnInteraction: false, // Keep autoplay running even after interaction
-  }}
-  breakpoints={{
-    640: { slidesPerView: 1 },
-    1024: { slidesPerView: 3 },
-  }}
->
-  {[
-    {
-      name: 'Education',
-      description: 'Transforming learning through digital tools.',
-      icon: <School className="h-12 w-12 text-primary" />,
-    },
-    {
-      name: 'Business',
-      description: 'Innovative solutions for modern business needs.',
-      icon: <BriefcaseBusiness className="h-12 w-12 text-primary" />,
-    },
-    {
-      name: 'Healthcare',
-      description: 'Innovative solutions for better patient care.',
-      icon: <Hospital className="h-12 w-12 text-primary" />,
-    },
-    {
-      name: 'Finance',
-      description: 'Secure and scalable financial platforms.',
-      icon: <WalletCards className="h-12 w-12 text-primary" />,
-    },
-  ].map((industry) => (
-    <SwiperSlide key={industry.name}>
-      <div className="card text-center">
-        <div className="mb-4">{industry.icon}</div>
-        <h3 className="text-xl font-semibold">{industry.name}</h3>
-        <p className="text-gray-600">{industry.description}</p>
-      </div>
-    </SwiperSlide>
-  ))}
-</Swiper>
-        </div>
-      </section>
-     {/* CTA Section */}
-     <section className="section bg-secondary text-white">
+      {/* CTA Section */}
+      <section className="section bg-secondary text-white">
         <div className="container text-center">
           <h2 className="section-title">Ready to Grow Digitally?</h2>
           <p className="subheading max-w-2xl mx-auto">
