@@ -162,46 +162,61 @@ const Home = () => {
             Industries We Serve
           </h2>
           <Swiper
-            spaceBetween={20}
-            slidesPerView={3}
-            loop={true}
-            autoplay={{ delay: 3000 }}
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              1024: { slidesPerView: 3 },
-            }}
-          >
-            {[
-              {
-                name: 'Education',
-                description: 'Transforming learning through digital tools.',
-                icon: <School className="h-12 w-12 text-primary" />,
-              },
-              {
-                name: 'Business',
-                description: 'Innovative solutions for modern business needs.',
-                icon: <BriefcaseBusiness className="h-12 w-12 text-primary" />,
-              },
-              {
-                name: 'Healthcare',
-                description: 'Innovative solutions for better patient care.',
-                icon: <Hospital className="h-12 w-12 text-primary" />,
-              },
-              {
-                name: 'Finance',
-                description: 'Secure and scalable financial platforms.',
-                icon: <WalletCards className="h-12 w-12 text-primary" />,
-              },
-            ].map((industry) => (
-              <SwiperSlide key={industry.name}>
-                <div className="card text-center">
-                  <div className="mb-4">{industry.icon}</div>
-                  <h3 className="text-xl font-semibold">{industry.name}</h3>
-                  <p className="text-gray-600">{industry.description}</p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+  spaceBetween={20}
+  slidesPerView={3}
+  loop={true}
+  autoplay={{
+    delay: 0, // No delay
+    disableOnInteraction: false, // Keep autoplay running even after interaction
+  }}
+  breakpoints={{
+    640: { slidesPerView: 1 },
+    1024: { slidesPerView: 3 },
+  }}
+>
+  {[
+    {
+      name: 'Education',
+      description: 'Transforming learning through digital tools.',
+      icon: <School className="h-12 w-12 text-primary" />,
+    },
+    {
+      name: 'Business',
+      description: 'Innovative solutions for modern business needs.',
+      icon: <BriefcaseBusiness className="h-12 w-12 text-primary" />,
+    },
+    {
+      name: 'Healthcare',
+      description: 'Innovative solutions for better patient care.',
+      icon: <Hospital className="h-12 w-12 text-primary" />,
+    },
+    {
+      name: 'Finance',
+      description: 'Secure and scalable financial platforms.',
+      icon: <WalletCards className="h-12 w-12 text-primary" />,
+    },
+  ].map((industry) => (
+    <SwiperSlide key={industry.name}>
+      <div className="card text-center">
+        <div className="mb-4">{industry.icon}</div>
+        <h3 className="text-xl font-semibold">{industry.name}</h3>
+        <p className="text-gray-600">{industry.description}</p>
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+        </div>
+      </section>
+     {/* CTA Section */}
+     <section className="section bg-secondary text-white">
+        <div className="container text-center">
+          <h2 className="section-title">Ready to Grow Digitally?</h2>
+          <p className="subheading max-w-2xl mx-auto">
+            Let's transform your sector with our innovative IT solutions
+          </p>
+          <Link to="/contact" className="btn bg-white text-secondary">
+            Get Started <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </div>
       </section>
     </div>
