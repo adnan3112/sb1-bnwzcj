@@ -67,23 +67,71 @@ const ServiceDetail = () => {
             What We Offer
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {service.features.map((feature, index) => (
-              <div
-                key={index}
-                className="card"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center mb-4">
-                  <span className="font-bold">{index + 1}</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{feature}</h3>
-              </div>
-            ))}
+  {service.features.map((feature, index) => {
+    if (typeof feature === 'string') {
+      return (
+        <div
+          key={index}
+          className="card"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center mb-4">
+            <span className="font-bold">{index + 1}</span>
           </div>
+          <h3 className="text-xl font-semibold mb-2">{feature}</h3>
+        </div>
+      );
+    } else {
+      return (
+        <div
+          key={index}
+          className="card"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center mb-4">
+            <span className="font-bold">{index + 1}</span>
+          </div>
+          <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+          <p className="mb-2"><strong>Objective:</strong> {feature.objective}</p>
+          <p className="mb-2"><strong>Features:</strong> {feature.features.join(', ')}</p>
+          <p><strong>Outcome:</strong> {feature.outcome}</p>
+        </div>
+      );
+    }
+  })}
+</div>
+
         </div>
       </section>
-
+{/* FAQ Section */}
+{service.faqs && service.faqs.length > 0 && (
+        <section className="section bg-white">
+          <div className="container">
+            <h2 className="text-3xl font-bold mb-12 text-center" data-aos="fade-up">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-6">
+              {service.faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="faq-item"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
+                  <h3 className="text-xl font-semibold mb-2">
+                    Q: {faq.question}
+                  </h3>
+                  <p className="text-lg">
+                    A: {faq.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
       {/* CTA Section */}
       <section className="section bg-secondary text-white">
         <div className="container text-center">
