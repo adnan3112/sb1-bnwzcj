@@ -110,35 +110,36 @@ const Home = () => {
             Industries We Serve
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Education',
-                description: 'Transforming learning through digital tools.',
-                icon: <School className="h-12 w-12 text-primary" />,
-              },
-              {
-                name: 'Business',
-                description: 'Innovative solutions for modern business needs.',
-                icon: <BriefcaseBusiness className="h-12 w-12 text-primary" />,
-              },
-              {
-                name: 'Healthcare',
-                description: 'Innovative solutions for better patient care.',
-                icon: <Hospital className="h-12 w-12 text-primary" />,
-              },
-              // {
-              //   name: 'Finance',
-              //   description: 'Secure and scalable financial platforms.',
-              //   icon: <WalletCards className="h-12 w-12 text-primary" />,
-              // },
-            ].map((industry) => (
-              <div key={industry.name} className="card text-center">
-                <div className="mb-4">{industry.icon}</div>
-                <h3 className="text-xl font-semibold">{industry.name}</h3>
-                <p className="text-gray-600">{industry.description}</p>
-              </div>
-            ))}
-          </div>
+  {[
+    {
+      name: 'Education',
+      description: 'Transforming learning through digital tools.',
+      icon: <School className="h-12 w-12 text-primary" />,
+    },
+    {
+      name: 'Business',
+      description: 'Innovative solutions for modern business needs.',
+      icon: <BriefcaseBusiness className="h-12 w-12 text-primary" />,
+    },
+    {
+      name: 'Healthcare',
+      description: 'Innovative solutions for better patient care.',
+      icon: <Hospital className="h-12 w-12 text-primary" />,
+    },
+    // {
+    //   name: 'Finance',
+    //   description: 'Secure and scalable financial platforms.',
+    //   icon: <WalletCards className="h-12 w-12 text-primary" />,
+    // },
+  ].map((industry) => (
+    <div key={industry.name} className="flex flex-col items-center justify-center text-center p-6 border rounded-lg shadow-lg">
+      <div className="mb-4 flex justify-center items-center">{industry.icon}</div>
+      <h3 className="text-xl font-semibold">{industry.name}</h3>
+      <p className="text-gray-600">{industry.description}</p>
+    </div>
+  ))}
+</div>
+
         </div>
       </section>
 
@@ -149,30 +150,31 @@ const Home = () => {
             Benefits of Partnering with Us
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Lock className="h-10 w-10 text-secondary" />,
-                title: 'Security',
-                description: 'Robust measures to keep your data safe.',
-              },
-              {
-                icon: <BarChart className="h-10 w-10 text-secondary" />,
-                title: 'Scalability',
-                description: 'Solutions that grow with your business.',
-              },
-              {
-                icon: <Rocket className="h-10 w-10 text-secondary" />,
-                title: 'Performance',
-                description: 'Optimized systems for seamless operations.',
-              },
-            ].map((benefit) => (
-              <div key={benefit.title} className="card text-center">
-                <div className="mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-semibold">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
+  {[
+    {
+      icon: <Lock className="h-10 w-10 text-secondary" />,
+      title: 'Security',
+      description: 'Robust measures to keep your data safe.',
+    },
+    {
+      icon: <BarChart className="h-10 w-10 text-secondary" />,
+      title: 'Scalability',
+      description: 'Solutions that grow with your business.',
+    },
+    {
+      icon: <Rocket className="h-10 w-10 text-secondary" />,
+      title: 'Performance',
+      description: 'Optimized systems for seamless operations.',
+    },
+  ].map((benefit) => (
+    <div key={benefit.title} className="flex flex-col items-center justify-center text-center p-6 border rounded-lg shadow-lg">
+      <div className="mb-4 flex justify-center items-center">{benefit.icon}</div>
+      <h3 className="text-xl font-semibold">{benefit.title}</h3>
+      <p className="text-gray-600">{benefit.description}</p>
+    </div>
+  ))}
+</div>
+
         </div>
       </section>
 
