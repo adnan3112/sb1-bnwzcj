@@ -231,14 +231,20 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="section bg-white">
+ {/* Map Section */}
+ <section className="py-12">
         <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-6">
-            Find Us Here
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-6">Find Us Here</h2>
           <div className="map-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2684.3016998789453!2d72.75862017188356!3d19.802631456883564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71ef902bf4f1b%3A0x6b52d89ad9933c11!2sSomnath%20Paradise!5e1!3m2!1sen!2sin!4v1733909986653!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?...your-maps-link"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>

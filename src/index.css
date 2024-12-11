@@ -5,24 +5,36 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   html {
     font-family: "Albert Sans", sans-serif;
-    scroll-behavior: smooth; /* Applied globally */
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-light text-[#36B7C3]; /* Set primary text color */
+    @apply bg-light text-[#36B7C3];
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    font-size: 16px; /* Set a base font size for accessibility */
+    font-size: 16px;
   }
 
   /* Links */
   a {
-    @apply text-[#36B7C3] hover:text-[#36B7C3]/90; /* Set link color */
+    @apply text-[#36B7C3] hover:text-[#36B7C3]/90;
     transition: color 0.3s ease-in-out;
-    text-decoration: none; /* Remove underline for links */
+    text-decoration: none;
+  }
+
+  /* Focus state for accessibility */
+  :focus-visible {
+    outline: 2px dashed #36b7c3;
+    outline-offset: 4px;
   }
 
   /* Reset margins and padding */
@@ -40,7 +52,6 @@
     padding: 0;
   }
 
-  /* Setting the scroll-behavior for smooth scrolling */
   .scroll-smooth {
     scroll-behavior: smooth;
   }
@@ -50,6 +61,10 @@
   /* Buttons */
   .btn {
     @apply px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-200 ease-in-out;
+  }
+
+  .btn:hover {
+    transform: scale(1.02);
   }
 
   .btn-primary {
@@ -70,9 +85,9 @@
     @apply py-12 sm:py-16 md:py-24;
   }
 
-  /* Cards with zoom-in effect on hover */
+  /* Cards */
   .card {
-    @apply bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 ease-in-out transform hover:scale-105 transition-transform duration-200;
+    @apply bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 ease-in-out transform hover:scale-105;
   }
 
   /* Flexbox for alignment */
@@ -82,16 +97,15 @@
 
   /* Typography */
   .title {
-    @apply text-3xl md:text-4xl font-semibold text-center text-[#36B7C3]; /* Set title text color */
+    @apply text-3xl md:text-4xl font-semibold text-center text-[#36B7C3];
   }
 
   .subheading {
     @apply text-xl text-gray-600 text-center max-w-3xl mx-auto;
   }
 
-  /* Section Title */
   .section-title {
-    @apply text-2xl md:text-3xl font-bold text-[#36B7C3] text-center mb-6; /* Set section title color */
+    @apply text-2xl md:text-3xl font-bold text-[#36B7C3] text-center mb-6;
   }
 
   /* Input Fields */
@@ -115,50 +129,77 @@
     @apply focus:ring-2 focus:ring-[#36B7C3]/50;
   }
 
-  /* Adjustments for smaller screens */
+  /* Responsive Typography */
+  .text-responsive {
+    font-size: 1.125rem;
+  }
+
   @media (max-width: 640px) {
     .btn {
-      @apply px-4 py-2; /* Make buttons more compact on small screens */
+      @apply px-4 py-2;
     }
 
     .grid-responsive {
-      @apply grid-cols-1; /* Stack grid items on small screens */
+      @apply grid-cols-1;
     }
 
     .section-title {
-      @apply text-xl; /* Make section titles smaller on small screens */
+      @apply text-xl;
     }
 
     .container {
-      @apply px-4; /* Remove padding on smaller screens */
+      @apply px-4;
+    }
+
+    .text-responsive {
+      font-size: 1rem;
     }
   }
 
   @media (max-width: 1024px) {
     .container {
-      @apply px-6; /* Reduce padding on medium screens */
+      @apply px-6;
     }
 
     .card {
-      @apply p-4; /* Adjust padding for medium screens */
+      @apply p-4;
     }
   }
-}
-.faq-item {
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-}
 
-.faq-item:last-child {
-  border-bottom: none;
-}
+  /* Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    body {
+      @apply bg-black text-white;
+    }
 
-.faq-item h3 {
-  font-weight: bold;
-}
+    .card {
+      @apply bg-gray-800 text-gray-200;
+    }
 
-.faq-item p {
-  margin-top: 0.5rem;
-  color: #555;
+    .btn-primary {
+      @apply bg-[#36B7C3] text-black;
+    }
+
+    a {
+      @apply text-[#36B7C3] hover:text-[#36B7C3]/80;
+    }
+  }
+
+  /* FAQ Styles */
+  .faq-item {
+    @apply mb-4 pb-4 border-b;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-item h3 {
+    font-weight: bold;
+  }
+
+  .faq-item p {
+    margin-top: 0.5rem;
+    color: #555;
+  }
 }
