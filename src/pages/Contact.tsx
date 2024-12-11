@@ -238,7 +238,7 @@ const Contact = () => {
           <div className="map-container">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d348.9400025018617!2d72.75920697492806!3d19.80432083047608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71eff326b9a9f%3A0xa34084e9684069eb!2sC3%2FC4%2C%20Sainath%20Nagar%2C%20Bhoisar%20West%2C%20Boisar%2C%20Maharashtra%20401504!5e1!3m2!1sen!2sin!4v1733909254968!5m2!1sen!2sin"
-              width="600"
+              width="100%"
               height="450"
               style={{ border: 0 }}
               allowFullScreen
