@@ -37,7 +37,6 @@ const Services = () => {
         <div className="container">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
-              const Icon = service.icon;
               return (
                 <Link
                   key={service.id}
@@ -47,8 +46,8 @@ const Services = () => {
                   data-aos-delay={index * 50} // Reduced delay to 50ms between items
                 >
                   <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-secondary text-white flex items-center justify-center">
-                      <Icon className="h-8 w-8" />
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center">
+                      <img src={service.icon} />
                     </div>
                     <h3 className="text-xl font-semibold ml-4">{service.title}</h3>
                   </div>
