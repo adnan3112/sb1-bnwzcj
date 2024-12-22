@@ -19,8 +19,6 @@ const ServiceDetail = () => {
     );
   }
 
-  const Icon = service.icon;
-
   return (
     <div>
       {/* Hero Section */}
@@ -35,10 +33,10 @@ const ServiceDetail = () => {
           </Link>
           <div className="flex items-center mb-8">
             <div
-              className="w-16 h-16 rounded-full bg-secondary text-white flex items-center justify-center"
+              className="w-16 h-16 flex items-center justify-center"
               data-aos="fade-right"
             >
-              <Icon className="h-8 w-8" />
+              <img src={service.icon} />
             </div>
             <h1
               className="text-4xl md:text-5xl font-bold ml-6"
@@ -66,43 +64,58 @@ const ServiceDetail = () => {
           >
             What We Offer
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-  {service.features.map((feature, index) => {
-    if (typeof feature === 'string') {
-      return (
-        <div
-          key={index}
-          className="card"
-          data-aos="fade-up"
-          data-aos-delay={index * 100}
-        >
-          <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center mb-4">
-            <span className="font-bold">{index + 1}</span>
-          </div>
-          <h3 className="text-xl font-semibold mb-2">{feature}</h3>
-        </div>
-      );
-    } else {
-      return (
-        <div
-          key={index}
-          className="card"
-          data-aos="fade-up"
-          data-aos-delay={index * 100}
-        >
-          <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center mb-4">
-            <span className="font-bold">{index + 1}</span>
-          </div>
-          <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-          <p className="mb-2"><strong>Objective:</strong> {feature.objective}</p>
-          <p className="mb-2"><strong>Features:</strong> {feature.features.join(', ')}</p>
-          <p><strong>Outcome:</strong> {feature.outcome}</p>
-        </div>
-      );
-    }
-  })}
-</div>
+          <div className="space-y-12">
+            {service.features.map((feature, index) => (
+              <div
+                key={index}
+                className={`flex flex-col md:flex-row ${
+                  index % 2 === 1 ? 'md:flex-row-reverse' : ''
+                } items-center md:items-start gap-6`}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                {/* Image Section */}
+                <div className="w-full md:w-1/2">
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="rounded-lg object-contain w-full h-64 md:h-96"
+                  />
+                </div>
 
+                {/* Content Section */}
+                <div className="w-full md:w-1/2 flex flex-col gap-4 self-center">
+                  <h6 className="text-xl font-semibold mb-1 inline-block relative">
+                    <span
+                      className="text border-b-2 border-secondary w-1/2 mx-auto"
+                    >
+                      {service.title}
+                    </span>
+                  </h6>
+                  <h3 className="text-2xl font-semibold text-gray-800">{feature.title}</h3>
+                  <p className="text-lg text-gray-700">
+                    <strong>Objective:</strong> {feature.objective}
+                  </p>
+                  <p className="text-lg text-gray-700">
+                    <strong>Features:</strong> {feature.features.join(', ')}
+                  </p>
+                  <p className="text-lg text-gray-700">
+                    <strong>Outcome:</strong> {feature.outcome}
+                  </p>
+                  <div className="flex items-center justify-center mt-4">
+                    <Link
+                      to="/contact"
+                      className="btn bg-secondary text-white py-2 px-6 rounded-lg hover:bg-secondary-dark transition-all duration-300"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                    >
+                      Learn More
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 {/* FAQ Section */}
