@@ -1,7 +1,7 @@
-import { Helmet } from 'react-helmet'; // For SEO
-import { Link } from 'react-router-dom'; // For navigation
-import { useEffect } from 'react'; // For lifecycle methods
-import { gsap } from 'gsap'; // For animations
+import { Helmet } from "react-helmet"; // For SEO
+import { Link } from "react-router-dom"; // For navigation
+import { useEffect } from "react"; // For lifecycle methods
+import { gsap } from "gsap"; // For animations
 import {
   ArrowRight,
   Code,
@@ -12,15 +12,14 @@ import {
   BarChart,
   School,
   Hospital,
-  WalletCards,
   BriefcaseBusiness,
-} from 'lucide-react';
+} from "lucide-react";
 
 const Home = () => {
   useEffect(() => {
     // Animating the Industries We Serve section
     gsap.fromTo(
-      '.card',
+      ".card",
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, stagger: 0.2, duration: 1 }
     );
@@ -41,20 +40,40 @@ const Home = () => {
         />
       </Helmet>
 
-      {/* Hero Section */}
-      <section className="bg-primary text-white py-20 sm:py-32">
-        <div className="container mx-auto px-4">
+      {/* Hero Section - Home Page */}
+      <section
+        className="relative bg-fixed bg-center pt-32 pb-20 sm:pt-40 sm:pb-40"
+        style={{
+          backgroundImage: "url('/assets/icons/home.jpg')", // ← Use your home background image
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Dark blur overlay */}
+        <div className="absolute inset-0 bg-dark bg-opacity-70 backdrop-blur-sm"></div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+            <h1
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
+              data-aos="fade-up"
+            >
               Planting Seeds for Your Digital Future
             </h1>
-            <p className="text-lg sm:text-xl mb-8">
+            <p
+              className="text-lg sm:text-xl mb-8"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               Empowering different sectors through innovative IT solutions and
               digital transformation.
             </p>
             <Link
               to="/contact"
               className="btn btn-secondary inline-flex items-center px-8 py-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
             >
               Contact Us <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
@@ -72,23 +91,23 @@ const Home = () => {
             {[
               {
                 icon: <Code className="h-8 w-8" />,
-                title: 'Innovation',
-                description: 'Pushing boundaries with cutting-edge solutions.',
+                title: "Innovation",
+                description: "Pushing boundaries with cutting-edge solutions.",
               },
               {
                 icon: <Users className="h-8 w-8" />,
-                title: 'Collaboration',
-                description: 'Working together to achieve excellence.',
+                title: "Collaboration",
+                description: "Working together to achieve excellence.",
               },
               {
                 icon: <Target className="h-8 w-8" />,
-                title: 'Precision',
-                description: 'Attention to detail in every project.',
+                title: "Precision",
+                description: "Attention to detail in every project.",
               },
               {
                 icon: <Rocket className="h-8 w-8" />,
-                title: 'Growth',
-                description: 'Continuous improvement and learning.',
+                title: "Growth",
+                description: "Continuous improvement and learning.",
               },
             ].map((value) => (
               <div key={value.title} className="card text-center">
@@ -110,36 +129,40 @@ const Home = () => {
             Industries We Serve
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-  {[
-    {
-      name: 'Education',
-      description: 'Transforming learning through digital tools.',
-      icon: <School className="h-12 w-12 text-primary" />,
-    },
-    {
-      name: 'Business',
-      description: 'Innovative solutions for modern business needs.',
-      icon: <BriefcaseBusiness className="h-12 w-12 text-primary" />,
-    },
-    {
-      name: 'Healthcare',
-      description: 'Innovative solutions for better patient care.',
-      icon: <Hospital className="h-12 w-12 text-primary" />,
-    },
-    // {
-    //   name: 'Finance',
-    //   description: 'Secure and scalable financial platforms.',
-    //   icon: <WalletCards className="h-12 w-12 text-primary" />,
-    // },
-  ].map((industry) => (
-    <div key={industry.name} className="flex flex-col items-center justify-center text-center p-6 border rounded-lg shadow-lg">
-      <div className="mb-4 flex justify-center items-center">{industry.icon}</div>
-      <h3 className="text-xl font-semibold">{industry.name}</h3>
-      <p className="text-gray-600">{industry.description}</p>
-    </div>
-  ))}
-</div>
-
+            {[
+              {
+                name: "Education",
+                description: "Transforming learning through digital tools.",
+                icon: <School className="h-12 w-12 text-primary" />,
+              },
+              {
+                name: "Business",
+                description: "Innovative solutions for modern business needs.",
+                icon: <BriefcaseBusiness className="h-12 w-12 text-primary" />,
+              },
+              {
+                name: "Healthcare",
+                description: "Innovative solutions for better patient care.",
+                icon: <Hospital className="h-12 w-12 text-primary" />,
+              },
+              // {
+              //   name: 'Finance',
+              //   description: 'Secure and scalable financial platforms.',
+              //   icon: <WalletCards className="h-12 w-12 text-primary" />,
+              // },
+            ].map((industry) => (
+              <div
+                key={industry.name}
+                className="flex flex-col items-center justify-center text-center p-6 border rounded-lg shadow-lg"
+              >
+                <div className="mb-4 flex justify-center items-center">
+                  {industry.icon}
+                </div>
+                <h3 className="text-xl font-semibold">{industry.name}</h3>
+                <p className="text-gray-600">{industry.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -150,46 +173,71 @@ const Home = () => {
             Benefits of Partnering with Us
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-  {[
-    {
-      icon: <Lock className="h-10 w-10 text-secondary" />,
-      title: 'Security',
-      description: 'Robust measures to keep your data safe.',
-    },
-    {
-      icon: <BarChart className="h-10 w-10 text-secondary" />,
-      title: 'Scalability',
-      description: 'Solutions that grow with your business.',
-    },
-    {
-      icon: <Rocket className="h-10 w-10 text-secondary" />,
-      title: 'Performance',
-      description: 'Optimized systems for seamless operations.',
-    },
-  ].map((benefit) => (
-    <div key={benefit.title} className="flex flex-col items-center justify-center text-center p-6 border rounded-lg shadow-lg">
-      <div className="mb-4 flex justify-center items-center">{benefit.icon}</div>
-      <h3 className="text-xl font-semibold">{benefit.title}</h3>
-      <p className="text-gray-600">{benefit.description}</p>
-    </div>
-  ))}
-</div>
-
+            {[
+              {
+                icon: <Lock className="h-10 w-10 text-secondary" />,
+                title: "Security",
+                description: "Robust measures to keep your data safe.",
+              },
+              {
+                icon: <BarChart className="h-10 w-10 text-secondary" />,
+                title: "Scalability",
+                description: "Solutions that grow with your business.",
+              },
+              {
+                icon: <Rocket className="h-10 w-10 text-secondary" />,
+                title: "Performance",
+                description: "Optimized systems for seamless operations.",
+              },
+            ].map((benefit) => (
+              <div
+                key={benefit.title}
+                className="flex flex-col items-center justify-center text-center p-6 border rounded-lg shadow-lg"
+              >
+                <div className="mb-4 flex justify-center items-center">
+                  {benefit.icon}
+                </div>
+                <h3 className="text-xl font-semibold">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-secondary text-white py-16">
-        <div className="container text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+      {/* CTA Section with Background Image */}
+      <section
+        className="relative bg-fixed bg-center py-24"
+        style={{
+          backgroundImage: "url('/assets/icons/cta.jpg')", // Replace with your image path
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm"></div>
+
+        {/* Content */}
+        <div className="relative z-10 container text-center text-white px-4">
+          <h2
+            className="text-3xl sm:text-4xl font-bold mb-4"
+            data-aos="fade-up"
+          >
             Ready to Grow Digitally?
           </h2>
-          <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
-            Let's transform your sector with our innovative IT solutions. Get in touch today to begin your digital journey.
+          <p
+            className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Let's transform your sector with our innovative IT solutions. Get in
+            touch today to begin your digital journey.
           </p>
-          <Link 
-            to="/contact" 
+          <Link
+            to="/contact"
             className="inline-flex items-center px-8 py-4 text-lg font-semibold bg-white text-secondary rounded-lg hover:bg-gray-100 transition-all duration-300"
+            data-aos="zoom-in"
+            data-aos-delay="200"
           >
             Get Started
             <ArrowRight className="ml-2 h-5 w-5" />

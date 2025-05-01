@@ -1,23 +1,3 @@
-import { 
-  Code, 
-  Globe, 
-  PenTool, 
-  Database, 
-  Search, 
-  Megaphone, 
-  BarChart, 
-  Palette, 
-  FileText, 
-  MapPin, 
-  DollarSign, 
-  Users, 
-  Monitor, 
-  Smartphone, 
-  Link2, 
-  Server, 
-  Briefcase 
-} from 'lucide-react';
-
 export const services = [
   {
     id: 'website-development',

@@ -2,29 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    
+
     <!-- Icon for tab -->
     <link rel="icon" type="image/png" href="https://imgur.com/zvoXvgM.png" />
-    
+
     <!-- Theme Color for the Address Bar -->
     <meta name="theme-color" content="#36B7C3">
-    
+
     <!-- Link to Manifest File -->
     <link rel="manifest" href="/manifest.json">
-    
+
     <!-- Viewport meta tag for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Meta description of your website -->
     <meta name="description" content="Groww Digitally is a leading IT solutions company dedicated to helping different sectors grow and succeed in the digital era through innovative technology and transformative solutions.">
-    
+
     <!-- Open Graph Meta Tags for Social Media -->
     <meta property="og:title" content="Groww Digitally - IT Solutions for Digital Growth" />
     <meta property="og:description" content="Groww Digitally is a leading IT solutions company helping businesses succeed in the digital era." />
     <meta property="og:image" content="https://www.growwdigitally.com/assets/images/logo.png" />
     <meta property="og:url" content="https://www.growwdigitally.com" />
     <meta property="og:type" content="website" />
-    
+
     <!-- Apple Touch Icon for iOS -->
     <link rel="apple-touch-icon" href="/assets/images/logo.png">
 
@@ -33,10 +33,38 @@
 
     <!-- Title of your website -->
     <title>Groww Digitally</title>
+
+    <!-- WhatsApp Button Styling -->
+    <style>
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+      }
+
+      .whatsapp-float img {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .whatsapp-float img:hover {
+        transform: scale(1.1);
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
-    
+
+    <!-- WhatsApp Floating Chat Button -->
+    <a href="https://wa.me/919733316555?text=Hello%2C%20we%20need%20to%20grow%20our%20business%20digitally%20and%20would%20love%20your%20expert%20help.%20Please%20connect%20us%20to%20someone%20from%20Grow%20Digitally."
+       class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+      <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="Chat with us on WhatsApp" />
+    </a>
+
     <!-- Link to main entry script -->
     <script type="module" src="/src/main.tsx"></script>
   </body>

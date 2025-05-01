@@ -1,5 +1,5 @@
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';  // Using react-icons
-import { Link } from 'react-router-dom';
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"; // Using react-icons
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -9,10 +9,10 @@ const Footer = () => {
           {/* Logo Section */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
-              <img 
-                src="https://i.imgur.com/zvoXvgM.png" 
-                alt="Logo" 
-                className="h-16 w-16" 
+              <img
+                src="https://i.imgur.com/zvoXvgM.png"
+                alt="Logo"
+                className="h-16 w-16"
               />
               <span className="font-bold text-xl">Groww Digitally</span>
             </Link>
@@ -26,22 +26,42 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-blue-500 hover:text-blue-700 transition-colors">
+                <Link
+                  to="/"
+                  className="text-blue-500 hover:text-blue-700 transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-blue-500 hover:text-blue-700 transition-colors">
+                <Link
+                  to="/about"
+                  className="text-blue-500 hover:text-blue-700 transition-colors"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-blue-500 hover:text-blue-700 transition-colors">
+                <Link
+                  to="/services"
+                  className="text-blue-500 hover:text-blue-700 transition-colors"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-blue-500 hover:text-blue-700 transition-colors">
+                <Link
+                  to="/portfolio"
+                  className="text-blue-500 hover:text-blue-700 transition-colors"
+                >
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-blue-500 hover:text-blue-700 transition-colors"
+                >
                   Contact
                 </Link>
               </li>
@@ -52,10 +72,11 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact Info</h3>
             <ul className="space-y-2 text-sm">
-              <li>+91 91586 69195</li>
+              <li>+91 97333 16555</li>
+              <li>+91 93704 16478</li>
               <li>info@growwdigitally.com</li>
-              <li>Sainath Nagar, Boisar West</li>
-              <li>Maharashtra, India</li>
+              <li>Thakur Galaxy, Building No.4, Office No.401 </li>
+              <li>Boisar (W), Maharashtra 401501, India</li>
             </ul>
           </div>
 
@@ -63,13 +84,22 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/growdigitaly.co?mibextid=ZbWKwL" className="hover:text-blue-700 transition-colors">
+              <a
+                href="https://www.facebook.com/growdigitaly.co?mibextid=ZbWKwL"
+                className="hover:text-blue-700 transition-colors"
+              >
                 <FaFacebook className="h-6 w-6" />
               </a>
-              <a href="https://www.instagram.com/growdigitaly.co?igsh=ZjJ1eWxnM2p3bzRp" className="hover:text-blue-700 transition-colors">
+              <a
+                href="https://www.instagram.com/growdigitaly.co?igsh=ZjJ1eWxnM2p3bzRp"
+                className="hover:text-blue-700 transition-colors"
+              >
                 <FaInstagram className="h-6 w-6" />
               </a>
-              <a href="https://www.linkedin.com/company/growwdigitally/" className="hover:text-blue-700 transition-colors">
+              <a
+                href="https://www.linkedin.com/company/growwdigitally/"
+                className="hover:text-blue-700 transition-colors"
+              >
                 <FaLinkedin className="h-6 w-6" />
               </a>
             </div>
@@ -79,11 +109,11 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
           <p>
-            &copy; {new Date().getFullYear()}{' '}
-            <a 
-              href="https://www.growwdigitally.com" 
-              className="text-blue-500 hover:text-blue-700" 
-              target="_blank" 
+            &copy; {new Date().getFullYear()}{" "}
+            <a
+              href="https://www.growwdigitally.com"
+              className="text-blue-500 hover:text-blue-700"
+              target="_blank"
               rel="noopener noreferrer"
             >
               Groww Digitally

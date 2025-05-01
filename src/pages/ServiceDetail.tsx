@@ -1,6 +1,6 @@
-import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
-import { services } from '../data/services';
+import { useParams, Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { services } from "../data/services";
 
 const ServiceDetail = () => {
   const { id } = useParams();
@@ -21,22 +21,35 @@ const ServiceDetail = () => {
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="bg-primary text-white py-20">
-        <div className="container">
+      {/* Hero Section with Background Image */}
+      <section
+        className="relative bg-fixed bg-center pt-40 pb-32"
+        style={{
+          backgroundImage: "url('/assets/images/service-detail2.jpg')", // Replace with your actual background image path
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-dark bg-opacity-70 backdrop-blur-sm"></div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 container text-white">
           <Link
             to="/services"
             className="inline-flex items-center text-accent hover:text-white mb-8"
+            data-aos="fade-down"
           >
             <ArrowLeft className="h-5 w-5 mr-2" />
             Back to Services
           </Link>
+
           <div className="flex items-center mb-8">
             <div
               className="w-16 h-16 flex items-center justify-center"
               data-aos="fade-right"
             >
-              <img src={service.icon} />
+              <img src={service.icon} alt={service.title} />
             </div>
             <h1
               className="text-4xl md:text-5xl font-bold ml-6"
@@ -45,8 +58,9 @@ const ServiceDetail = () => {
               {service.title}
             </h1>
           </div>
+
           <p
-            className="text-xl max-w-3xl"
+            className="text-xl max-w-3xl text-gray-200"
             data-aos="fade-up"
             data-aos-delay="100"
           >
@@ -69,7 +83,7 @@ const ServiceDetail = () => {
               <div
                 key={index}
                 className={`flex flex-col md:flex-row ${
-                  index % 2 === 1 ? 'md:flex-row-reverse' : ''
+                  index % 2 === 1 ? "md:flex-row-reverse" : ""
                 } items-center md:items-start gap-6`}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
@@ -86,18 +100,18 @@ const ServiceDetail = () => {
                 {/* Content Section */}
                 <div className="w-full md:w-1/2 flex flex-col gap-4 self-center">
                   <h6 className="text-xl font-semibold mb-1 inline-block relative">
-                    <span
-                      className="text border-b-2 border-secondary w-1/2 mx-auto"
-                    >
+                    <span className="text border-b-2 border-secondary w-1/2 mx-auto">
                       {service.title}
                     </span>
                   </h6>
-                  <h3 className="text-2xl font-semibold text-gray-800">{feature.title}</h3>
+                  <h3 className="text-2xl font-semibold text-gray-800">
+                    {feature.title}
+                  </h3>
                   <p className="text-lg text-gray-700">
                     <strong>Objective:</strong> {feature.objective}
                   </p>
                   <p className="text-lg text-gray-700">
-                    <strong>Features:</strong> {feature.features.join(', ')}
+                    <strong>Features:</strong> {feature.features.join(", ")}
                   </p>
                   <p className="text-lg text-gray-700">
                     <strong>Outcome:</strong> {feature.outcome}
@@ -118,11 +132,14 @@ const ServiceDetail = () => {
           </div>
         </div>
       </section>
-{/* FAQ Section */}
-{service.faqs && service.faqs.length > 0 && (
+      {/* FAQ Section */}
+      {service.faqs && service.faqs.length > 0 && (
         <section className="section bg-white">
           <div className="container">
-            <h2 className="text-3xl font-bold mb-12 text-center" data-aos="fade-up">
+            <h2
+              className="text-3xl font-bold mb-12 text-center"
+              data-aos="fade-up"
+            >
               Frequently Asked Questions
             </h2>
             <div className="space-y-6">
@@ -136,9 +153,7 @@ const ServiceDetail = () => {
                   <h3 className="text-xl font-semibold mb-2">
                     Q: {faq.question}
                   </h3>
-                  <p className="text-lg">
-                    A: {faq.answer}
-                  </p>
+                  <p className="text-lg">A: {faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -156,7 +171,8 @@ const ServiceDetail = () => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Contact us today to learn more about our {service.title.toLowerCase()} services.
+            Contact us today to learn more about our{" "}
+            {service.title.toLowerCase()} services.
           </p>
           <Link
             to="/contact"
